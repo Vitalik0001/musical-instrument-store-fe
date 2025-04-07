@@ -23,7 +23,8 @@
             "hooks/*": ["hooks/*"],
             "pages/*": ["pages/*"],
             "config/*": ["config/*"],
-            "store/*": ["store/*"]
+            "store/*": ["store/*"],
+            "shared/*": ["shared/*"]
         },
 
         /* Linting */
