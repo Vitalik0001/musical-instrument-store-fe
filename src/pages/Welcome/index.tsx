@@ -1,15 +1,16 @@
-import { CustomHeader } from 'shared/components';
-import { PageContentWrapper } from 'shared/layouts';
-
-import s from './styles.module.scss';
+import { CustomHeader } from "shared/components";
+import { PageContentWrapper } from "shared/layouts";
+import { Home } from "./components/Home";
+import { MusicHeroSection } from "./components/MusicHeroSection/index";
 
 export const WelcomePage = () => {
     return (
         <>
             <CustomHeader />
+            <MusicHeroSection />
             <PageContentWrapper>
-                <h1>Hello world !</h1>
+                <Home />
             </PageContentWrapper>
         </>
     );
-}
+};
