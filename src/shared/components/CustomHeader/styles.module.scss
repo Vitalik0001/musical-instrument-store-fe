@@ -1,0 +1,46 @@
+@use 'styles/variables' as *;
+@use 'styles/palette' as *;
+@use 'styles/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  @include d-flex(null, space-between, center);
+  background: $gray;
+  padding: 0 165px;
+  z-index: 3;
+
+  &__navigation {
+    @include d-flex();
+    gap: 50px;
+    
+    &--auth {
+      @include d-flex(null, null, center);
+      gap: 50px;
+      cursor: pointer;
+
+      & img {
+        transition: 0.3s all ease-in-out;
+        
+        &:hover {
+          transform: scale(1.12);
+        }
+      }
+    }
+
+    &--links {
+      @include d-flex();
+      gap: 50px;
+    }
+
+    &__button {
+      font-size: 28px !important;
+      transition: 0.3s all ease-in-out;
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+}
