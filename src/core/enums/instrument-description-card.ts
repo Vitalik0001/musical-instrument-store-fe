@@ -1,0 +1,29 @@
+export enum InstrumentDescriptionCardSrc {
+    Stringed = "src/assets/icons/guitar.svg",
+    Wind = "src/assets/icons/downpipe.svg",
+    Percussion = "src/assets/icons/drums.svg",
+}
+
+export enum InstrumentDescriptionCardTitle {
+    Stringed = "Струнні інструменти",
+    Wind = "Духовні інструменти",
+    Percussion = "Ударні інструменти",
+}
+
+export enum InstrumentDescriptionCardText {
+    Stringed = "Душа музики, що поєднує в собі глибину звучання, витонченість форми та майстерність виконання. Вони створюють мелодії, які зачіпають найтонші струни душі, від ніжних звуків скрипки до потужного глибокого тону контрабаса. Обирайте ідеальний інструмент та творіть натхненну музику разом із нами!",
+    Wind = "Подих музики, що наповнює простір силою та емоціями. Духові інструменти вражають своїм виразним тембром — від ніжного звучання флейти до потужного голосу саксофона чи труби. Вони здатні передати глибокі почуття та створити справжню музичну магію. Обирайте свій ідеальний інструмент.",
+    Percussion = "Ритм, що веде музику вперед і задає їй характер. Ударні інструменти — це енергія, динаміка та безмежні можливості для самовираження. Від глибокого басового барабана до яскравого звучання тарілок — кожен удар наповнює музику драйвом. ",
+}
+
+export enum InstrumentDescriptionCardAlt {
+    Stringed = "Basket",
+    Wind = "Login",
+    Percussion = "People",
+}
+
+export enum InstrumentDescriptionCardId {
+    Stringed = 1,
+    Wind = 2,
+    Percussion = 3,
+}

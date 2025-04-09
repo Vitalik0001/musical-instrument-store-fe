@@ -1,0 +1,66 @@
+@use "styles/palette" as *;
+
+.music {
+    position: relative;
+    margin-bottom: 20px;
+
+    &__background {
+        margin-top: 121px;
+    }
+
+    &__images {
+        &__first {
+            position: absolute;
+            top: 132px;
+            left: 57px;
+            z-index: 1;
+        }
+
+        &__second {
+            position: absolute;
+            top: 87px;
+            right: 2.3px;
+            z-index: 1;
+        }
+
+        &__triangle {
+            position: absolute;
+            top: 390px;
+            left: 199px;
+            z-index: 1;
+        }
+
+        &__trumplet {
+            position: absolute;
+            top: 294px;
+            right: 96.23px;
+            z-index: 1;
+        }
+    }
+
+    &__block {
+        position: absolute;
+        top: 194px;
+        text-align: center;
+        padding: 0 390px;
+    }
+
+    &__title {
+        font-size: 64px;
+        color: $gray;
+        font-weight: 600;
+        line-height: 80px;
+    }
+
+    &__span {
+        color: $yellow;
+    }
+
+    &__text {
+        color: $event-text-gray;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 38px;
+        margin-top: 16px;
+    }
+}
