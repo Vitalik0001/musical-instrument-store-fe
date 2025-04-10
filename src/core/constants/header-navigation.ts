@@ -11,11 +11,6 @@ import {
 
 export const headerNavigationButtons = [
     {
-        id: HeaderNavigationButtonId.Percussion,
-        path: HeaderNavigationButtonPath.Percussion,
-        text: HeaderNavigationButtonLabel.Percussion,
-    },
-    {
         id: HeaderNavigationButtonId.Stringed,
         path: HeaderNavigationButtonPath.Stringed,
         text: HeaderNavigationButtonLabel.Stringed,
@@ -24,6 +19,11 @@ export const headerNavigationButtons = [
         id: HeaderNavigationButtonId.Wind,
         path: HeaderNavigationButtonPath.Wind,
         text: HeaderNavigationButtonLabel.Wind,
+    },
+    {
+        id: HeaderNavigationButtonId.Percussion,
+        path: HeaderNavigationButtonPath.Percussion,
+        text: HeaderNavigationButtonLabel.Percussion,
     },
 ];
 
