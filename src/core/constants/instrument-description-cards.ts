@@ -8,7 +8,7 @@ import { InstrumentData } from "core/types/Instrument";
 
 import stringed from "assets/icons/guitar.svg";
 import wind from "assets/icons/downpipe.svg";
-import percussion from "src/assets/icons/drums.svg";
+import percussion from "assets/icons/drums.svg";
 
 export const instrumentDescriptionCardS: InstrumentData[] = [
     {
