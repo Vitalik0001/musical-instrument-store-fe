@@ -1,8 +1,9 @@
 import React from "react";
-// Styles
-import s from "./styles.module.scss";
 import { InstrumentData } from "core/types/Instrument";
 import { CustomButton } from "shared/components";
+
+// Styles
+import s from "./styles.module.scss";
 
 export const ProductInfo: React.FC<InstrumentData> = ({
     id,

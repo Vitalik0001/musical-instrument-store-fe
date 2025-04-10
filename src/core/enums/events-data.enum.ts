@@ -1,9 +1,3 @@
-export enum EventDataSrc {
-    OpenDay = "src/assets/icons/open-day-card.svg",
-    MusicInstrument = "src/assets/icons/guitar-card.svg",
-    People = "src/assets/icons/fans-card.svg",
-}
-
 export enum EventDataTitle {
     OpenDay = "День відкритих дверей",
     MusicInstrument = "Вечір тематичних інструментів",

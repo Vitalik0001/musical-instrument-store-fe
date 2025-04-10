@@ -4,9 +4,9 @@ import { PageInstrumentWrapper } from "shared/layouts/PageInstrumentsWrapper";
 import { CustomHeader } from "shared/components";
 import { Guitars } from "pages/Stringed/components/Instruments/components/Guitars";
 import { Violines } from "pages/Stringed/components/Instruments/components/Violines";
+import { CustomInstrument } from "shared/components/CustomInstrument";
 
 import mainImage from "assets/images/percussion-main.png";
-import { CustomInstrument } from "shared/components/CustomInstrument";
 
 export const Percussion: React.FC = () => {
     return (

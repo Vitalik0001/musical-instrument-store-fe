@@ -1,22 +1,35 @@
 import {
-    GuitarSrc,
     GuitarTitle,
     GuitarPrice,
     GuitarsId,
     ViolinId,
-    ViolinSrc,
     ViolinTitle,
     ViolinPrice,
     UkuleleId,
-    UkuleleSrc,
     UkuleleTitle,
     UkulelePrice,
 } from "core/enums/instruments-data";
 
+import marcusMiller from "assets/images/marcus-miller-guitar.svg";
+import fender from "assets/images/Fender V6 5-String.svg";
+import sireMarcusMiller from "assets/images/guitar-sire-marcus-miller-m6.svg";
+import yamaha from "assets/images/guitar-yamaha-P6.svg";
+import fenderS from "assets/images/guitar-fender-S7.svg";
+import yamahaQ from "assets/images/guitar-yamaha-q3.svg";
+import gligaGems from "assets/images/violins-gliga-gems.svg";
+import antonioWang from "assets/images/violins-antonio-wang.svg";
+import corinaOrquestra from "assets/images/violins-corina-orquestra.svg";
+import gligaExtra from "assets/images/violins-gliga-extra-antiqued.svg";
+import antonioWangFeritage from "assets/images/violins-antonio-wang-feritage-basic.svg";
+import stentor from "assets/images/violins-stentor-student.svg";
+import kalaK from "assets/images/Ukulele-Kala-KA-15S.svg";
+import figure from "assets/images/Ukulele-Figure-UKU1-OR.svg";
+import kalaB from "assets/images/Ukulele-Kala-KA-B.svg";
+
 export const guitarData = [
     {
         id: GuitarsId.MarcusMiller,
-        image: GuitarSrc.MarcusMiller,
+        image: marcusMiller,
         title: GuitarTitle.MarcusMiller,
         price: GuitarPrice.MarcusMiller,
         isHasColor: false,
@@ -24,7 +37,7 @@ export const guitarData = [
     },
     {
         id: GuitarsId.Fender,
-        image: GuitarSrc.Fender,
+        image: fender,
         title: GuitarTitle.Fender,
         price: GuitarPrice.Fender,
         isHasColor: false,
@@ -32,7 +45,7 @@ export const guitarData = [
     },
     {
         id: GuitarsId.SireMarcusMiller,
-        image: GuitarSrc.SireMarcusMiller,
+        image: sireMarcusMiller,
         title: GuitarTitle.SireMarcusMiller,
         price: GuitarPrice.SireMarcusMiller,
         isHasColor: false,
@@ -40,7 +53,7 @@ export const guitarData = [
     },
     {
         id: GuitarsId.Yamaha,
-        image: GuitarSrc.Yamaha,
+        image: yamaha,
         title: GuitarTitle.Yamaha,
         price: GuitarPrice.Yamaha,
         isHasColor: false,
@@ -48,7 +61,7 @@ export const guitarData = [
     },
     {
         id: GuitarsId.FenderS,
-        image: GuitarSrc.FenderS,
+        image: fenderS,
         title: GuitarTitle.FenderS,
         price: GuitarPrice.FenderS,
         isHasColor: false,
@@ -56,7 +69,7 @@ export const guitarData = [
     },
     {
         id: GuitarsId.YamahaQ,
-        image: GuitarSrc.YamahaQ,
+        image: yamahaQ,
         title: GuitarTitle.YamahaQ,
         price: GuitarPrice.YamahaQ,
         isHasColor: false,
@@ -67,7 +80,7 @@ export const guitarData = [
 export const violinsData = [
     {
         id: ViolinId.GligaGems,
-        image: ViolinSrc.GligaGems,
+        image: gligaGems,
         title: ViolinTitle.GligaGems,
         price: ViolinPrice.GligaGems,
         isHasColor: false,
@@ -75,7 +88,7 @@ export const violinsData = [
     },
     {
         id: ViolinId.AntonioWang,
-        image: ViolinSrc.AntonioWang,
+        image: antonioWang,
         title: ViolinTitle.AntonioWang,
         price: ViolinPrice.AntonioWang,
         isHasColor: false,
@@ -83,7 +96,7 @@ export const violinsData = [
     },
     {
         id: ViolinId.CorinaOrquestra,
-        image: ViolinSrc.CorinaOrquestra,
+        image: corinaOrquestra,
         title: ViolinTitle.CorinaOrquestra,
         price: ViolinPrice.CorinaOrquestra,
         isHasColor: false,
@@ -91,7 +104,7 @@ export const violinsData = [
     },
     {
         id: ViolinId.GligaExtra,
-        image: ViolinSrc.GligaExtra,
+        image: gligaExtra,
         title: ViolinTitle.GligaExtra,
         price: ViolinPrice.GligaExtra,
         isHasColor: false,
@@ -99,7 +112,7 @@ export const violinsData = [
     },
     {
         id: ViolinId.AntonioWangFeritage,
-        image: ViolinSrc.AntonioWangFeritage,
+        image: antonioWangFeritage,
         title: ViolinTitle.AntonioWang,
         price: ViolinPrice.AntonioWang,
         isHasColor: false,
@@ -107,7 +120,7 @@ export const violinsData = [
     },
     {
         id: ViolinId.Stentor,
-        image: ViolinSrc.Stentor,
+        image: stentor,
         title: ViolinTitle.Stentor,
         price: ViolinPrice.Stentor,
         isHasColor: false,
@@ -118,7 +131,7 @@ export const violinsData = [
 export const ukuleleData = [
     {
         id: UkuleleId.KalaK,
-        image: UkuleleSrc.KalaK,
+        image: kalaK,
         title: UkuleleTitle.KalaK,
         price: UkulelePrice.KalaK,
         isHasColor: false,
@@ -126,7 +139,7 @@ export const ukuleleData = [
     },
     {
         id: UkuleleId.Figure,
-        image: UkuleleSrc.Figure,
+        image: figure,
         title: UkuleleTitle.Figure,
         price: UkulelePrice.Figure,
         isHasColor: true,
@@ -134,7 +147,7 @@ export const ukuleleData = [
     },
     {
         id: UkuleleId.KalaB,
-        image: UkuleleSrc.KalaB,
+        image: kalaB,
         title: UkuleleTitle.KalaB,
         price: UkulelePrice.KalaB,
         isHasColor: false,

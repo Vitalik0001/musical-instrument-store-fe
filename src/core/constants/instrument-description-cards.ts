@@ -1,5 +1,4 @@
 import {
-    InstrumentDescriptionCardSrc,
     InstrumentDescriptionCardTitle,
     InstrumentDescriptionCardText,
     InstrumentDescriptionCardAlt,
@@ -7,10 +6,14 @@ import {
 } from "core/enums/instrument-description-card";
 import { InstrumentData } from "core/types/Instrument";
 
+import stringed from "assets/icons/guitar.svg";
+import wind from "assets/icons/downpipe.svg";
+import percussion from "src/assets/icons/drums.svg";
+
 export const instrumentDescriptionCardS: InstrumentData[] = [
     {
         id: InstrumentDescriptionCardId.Stringed,
-        image: InstrumentDescriptionCardSrc.Stringed,
+        image: stringed,
         title: InstrumentDescriptionCardTitle.Stringed,
         text: InstrumentDescriptionCardText.Stringed,
         isRightSide: true,
@@ -18,7 +21,7 @@ export const instrumentDescriptionCardS: InstrumentData[] = [
     },
     {
         id: InstrumentDescriptionCardId.Wind,
-        image: InstrumentDescriptionCardSrc.Wind,
+        image: wind,
         title: InstrumentDescriptionCardTitle.Wind,
         text: InstrumentDescriptionCardText.Wind,
         isRightSide: false,
@@ -26,7 +29,7 @@ export const instrumentDescriptionCardS: InstrumentData[] = [
     },
     {
         id: InstrumentDescriptionCardId.Percussion,
-        image: InstrumentDescriptionCardSrc.Percussion,
+        image: percussion,
         title: InstrumentDescriptionCardTitle.Percussion,
         text: InstrumentDescriptionCardText.Percussion,
         isRightSide: true,

@@ -31,11 +31,6 @@ export enum HeaderNavigationIconTitle {
     Login = "Login",
 }
 
-export enum HeaderNavigationIconSrc {
-    Basket = "src/assets/icons/shopping-basket.svg",
-    Login = "src/assets/icons/profile.svg",
-}
-
 export enum HeaderNavigationIconPath {
     Basket = "/basket",
     Login = "/login",

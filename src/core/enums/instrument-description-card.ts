@@ -1,9 +1,3 @@
-export enum InstrumentDescriptionCardSrc {
-    Stringed = "src/assets/icons/guitar.svg",
-    Wind = "src/assets/icons/downpipe.svg",
-    Percussion = "src/assets/icons/drums.svg",
-}
-
 export enum InstrumentDescriptionCardTitle {
     Stringed = "Струнні інструменти",
     Wind = "Духовні інструменти",
