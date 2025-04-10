@@ -14,9 +14,9 @@ export const Guitars: React.FC = () => {
                         key={item.id}
                         instrumentName={item.title}
                         image={item.image}
-                        isHasColor={false}
+                        isHasColor={item.isHasColor}
                         price={item.price}
-                        colors="asd"
+                        colors={item.colors}
                     />
                 ))}
             </div>
