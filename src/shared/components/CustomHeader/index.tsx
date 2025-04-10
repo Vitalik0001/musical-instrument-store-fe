@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { headerNavigationButtons, headerNavigationIcons } from "core/constants";
 import { CustomButton } from "shared/components";
 
+import Logo from "assets/icons/main-logo.svg";
+
 import s from "./styles.module.scss";
 
 interface CustomHeaderProps {
@@ -18,7 +20,7 @@ export const CustomHeader: FC<CustomHeaderProps> = ({
     return (
         <div className={s.header}>
             <div className={s.header__logo}>
-                <img src="src/assets/icons/main-logo.svg"></img>
+                <img src={Logo} alt="logo"></img>
             </div>
             <div className={s.header__navigation}>
                 <div className={s["header__navigation--links"]}>

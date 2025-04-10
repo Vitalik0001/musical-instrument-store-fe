@@ -5,9 +5,11 @@ import {
     HeaderNavigationButtonPath,
     HeaderNavigationIconAlt,
     HeaderNavigationIconTitle,
-    HeaderNavigationIconSrc,
     HeaderNavigationIconPath,
 } from "core/enums";
+
+import basket from "assets/icons/shopping-basket.svg";
+import login from "assets/icons/profile.svg";
 
 export const headerNavigationButtons = [
     {
@@ -33,13 +35,13 @@ export const headerNavigationIcons = [
         path: HeaderNavigationIconPath.Basket,
         alt: HeaderNavigationIconAlt.Basket,
         title: HeaderNavigationIconTitle.Basket,
-        src: HeaderNavigationIconSrc.Basket,
+        src: basket,
     },
     {
         id: HeaderNavigationIconId.Login,
         path: HeaderNavigationIconPath.Login,
         alt: HeaderNavigationIconAlt.Login,
         title: HeaderNavigationIconTitle.Login,
-        src: HeaderNavigationIconSrc.Login,
+        src: login,
     },
 ];
