@@ -1,14 +1,21 @@
-import { FC, PropsWithChildren } from 'react';
-import cx from 'classnames';
+import { FC, PropsWithChildren, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import cx from "classnames";
 
-import s from './styles.module.scss';
+import s from "./styles.module.scss";
 
 interface PageContentWrapperProps {
-	className?: string;
+    className?: string;
 }
 
 export const PageContentWrapper: FC<
-	PropsWithChildren<PageContentWrapperProps>
-> = ({ children, className = '' }) => {
-	return <div className={cx(className, s.wrapper)}>{children}</div>;
+    PropsWithChildren<PageContentWrapperProps>
+> = ({ children, className = "" }) => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo({ top: 0 });
+    }, [pathname]);
+
+    return <div className={cx(className, s.wrapper)}>{children}</div>;
 };

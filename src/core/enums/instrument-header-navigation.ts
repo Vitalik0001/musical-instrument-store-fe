@@ -10,15 +10,15 @@ export enum HeaderNavigationIconId {
 }
 
 export enum HeaderNavigationButtonLabel {
-    Stringed = "Струнні",
-    Wind = "Духові",
-    Percussion = "Ударні",
+    Percussion = "Струнні",
+    Stringed = "Духові",
+    Wind = "Ударні",
 }
 
 export enum HeaderNavigationButtonPath {
+    Percussion = "/percussion",
     Stringed = "/stringed",
     Wind = "/wind",
-    Percussion = "/percussion",
 }
 
 export enum HeaderNavigationIconAlt {
