@@ -33,6 +33,7 @@ export const guitarData = [
         title: GuitarTitle.MarcusMiller,
         price: GuitarPrice.MarcusMiller,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -41,6 +42,7 @@ export const guitarData = [
         title: GuitarTitle.Fender,
         price: GuitarPrice.Fender,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -49,6 +51,7 @@ export const guitarData = [
         title: GuitarTitle.SireMarcusMiller,
         price: GuitarPrice.SireMarcusMiller,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -57,6 +60,7 @@ export const guitarData = [
         title: GuitarTitle.Yamaha,
         price: GuitarPrice.Yamaha,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -65,6 +69,7 @@ export const guitarData = [
         title: GuitarTitle.FenderS,
         price: GuitarPrice.FenderS,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -73,6 +78,7 @@ export const guitarData = [
         title: GuitarTitle.YamahaQ,
         price: GuitarPrice.YamahaQ,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
 ];
@@ -84,6 +90,7 @@ export const violinsData = [
         title: ViolinTitle.GligaGems,
         price: ViolinPrice.GligaGems,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -92,6 +99,7 @@ export const violinsData = [
         title: ViolinTitle.AntonioWang,
         price: ViolinPrice.AntonioWang,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -100,6 +108,7 @@ export const violinsData = [
         title: ViolinTitle.CorinaOrquestra,
         price: ViolinPrice.CorinaOrquestra,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -108,6 +117,7 @@ export const violinsData = [
         title: ViolinTitle.GligaExtra,
         price: ViolinPrice.GligaExtra,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -116,6 +126,7 @@ export const violinsData = [
         title: ViolinTitle.AntonioWang,
         price: ViolinPrice.AntonioWang,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -124,6 +135,7 @@ export const violinsData = [
         title: ViolinTitle.Stentor,
         price: ViolinPrice.Stentor,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
 ];
@@ -135,6 +147,7 @@ export const ukuleleData = [
         title: UkuleleTitle.KalaK,
         price: UkulelePrice.KalaK,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
     {
@@ -143,6 +156,7 @@ export const ukuleleData = [
         title: UkuleleTitle.Figure,
         price: UkulelePrice.Figure,
         isHasColor: true,
+        link: "/product",
         colors: [{ color: "#1396B1" }, { color: "#DD9738" }],
     },
     {
@@ -151,6 +165,7 @@ export const ukuleleData = [
         title: UkuleleTitle.KalaB,
         price: UkulelePrice.KalaB,
         isHasColor: false,
+        link: "/product",
         colors: [],
     },
 ];

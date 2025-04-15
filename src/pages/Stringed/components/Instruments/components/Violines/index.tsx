@@ -17,6 +17,7 @@ export const Violines: React.FC = () => {
                         isHasColor={item.isHasColor}
                         price={item.price}
                         colors={item.colors}
+                        link={item.link}
                     />
                 ))}
             </div>

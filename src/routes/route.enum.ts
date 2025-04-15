@@ -13,6 +13,7 @@ export enum Route {
     Percussion = "/percussion",
     Stringed = "/stringed",
     Wind = "/wind",
+    Product = "/product",
 
     // MusicalInstruments = "instruments-catalog",
     // Product = "product",
