@@ -1,0 +1,18 @@
+@use 'styles/mixins' as *;
+
+.login {
+  &__password {
+    position: relative;
+
+    &__icon {
+      position: absolute;
+      right: 12px;
+      top: 65%;
+
+      & svg {
+        @include square(16px);
+        cursor: pointer;
+      }
+    }
+  }
+}

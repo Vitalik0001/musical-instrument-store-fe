@@ -23,7 +23,6 @@ export const ProductInfo: React.FC<InstrumentData> = ({
             <div>
                 <p className={s.music__title}>{title}</p>
                 <p className={s.music__text}>{text}</p>
-                <button></button>
                 <CustomButton
                     classes={`${s.music__btn} ${
                         id === 3 ? s.music__btn__last : ""

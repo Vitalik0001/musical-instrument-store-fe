@@ -15,12 +15,6 @@ export enum HeaderNavigationButtonLabel {
     Percussion = "Ударні",
 }
 
-export enum HeaderNavigationButtonPath {
-    Stringed = "/stringed",
-    Wind = "/wind",
-    Percussion = "/percussion",
-}
-
 export enum HeaderNavigationIconAlt {
     Basket = "Basket",
     Login = "Login",
@@ -29,9 +23,4 @@ export enum HeaderNavigationIconAlt {
 export enum HeaderNavigationIconTitle {
     Basket = "Basket",
     Login = "Login",
-}
-
-export enum HeaderNavigationIconPath {
-    Basket = "/basket",
-    Login = "/login",
 }

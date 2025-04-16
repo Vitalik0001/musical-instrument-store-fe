@@ -1,0 +1,27 @@
+@use 'styles/mixins' as *;
+
+.sign-up {
+  &__info {
+    @include d-flex(column);
+    gap: 25px;
+
+    & input {
+      width: 100%;
+    }
+  }
+
+  &__password {
+    position: relative;
+
+    &__icon {
+      position: absolute;
+      right: 12px;
+      top: 47%;
+
+      & svg {
+        @include square(16px);
+        cursor: pointer;
+      }
+    }
+  }
+}

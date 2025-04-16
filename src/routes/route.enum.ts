@@ -2,8 +2,8 @@ export enum Route {
     General = "/",
     Others = "*",
 
-    LogIn = "login",
-    Registration = "registration",
+    Login = "login",
+    Registration = "sign-up",
     ForgotPassword = "forgot-password",
     ResetPassword = "reset-password",
 

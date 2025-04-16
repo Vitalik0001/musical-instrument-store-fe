@@ -1,0 +1,18 @@
+@use 'styles/palette' as *;
+@use 'styles/mixins' as *;
+
+.auth {
+  height: 100vh;
+  background: $registration-page-bg;
+  @include d-flex(column, center, center);
+
+  &__card {
+    width: 550px;
+    padding: 35px 50px 25px 50px;
+    @include d-flex(column, space-between);
+    gap: 35px;
+    background: $white;
+    border-radius: 17px;
+    box-shadow: $registration-page-box-shadow;
+  }
+}
