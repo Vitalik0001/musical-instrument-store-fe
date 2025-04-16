@@ -22,6 +22,19 @@ export const PageInstrumentWrapper: React.FC<PageInstrumentProps> = ({
 }) => {
     const [activeBtnId, setActiveBtnId] = useState<number | null>(null);
 
+    const handleClick = (path: string): void => {
+        const id = path.replace("#", "");
+        const element = document.getElementById(id);
+
+        if (element) {
+            const yOffset = -100;
+            const y =
+                element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+            window.scrollTo({ top: y, behavior: "smooth" });
+        }
+    };
+
     return (
         <div className={s.wrapper}>
             <div className={s.wrapper__container}>
@@ -43,7 +56,7 @@ export const PageInstrumentWrapper: React.FC<PageInstrumentProps> = ({
                     {instrumentHeaderNavigation[headerPaths].map((button) => (
                         <Link
                             key={button.id}
-                            to={button.path}
+                            to=""
                             onClick={() => setActiveBtnId(button.id)}
                         >
                             <CustomButton
@@ -51,6 +64,7 @@ export const PageInstrumentWrapper: React.FC<PageInstrumentProps> = ({
                                     activeBtnId === button.id ? s.active : ""
                                 }`}
                                 variant="text"
+                                handleAnchor={() => handleClick(button.path)}
                             >
                                 {button.text}
                             </CustomButton>
