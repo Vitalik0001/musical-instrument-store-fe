@@ -1,0 +1,33 @@
+@use "styles/palette" as *;
+@use "styles/mixins" as *;
+
+.cart {
+    margin-top: 60px;
+
+    &__container {
+        padding: 46px 100px 42px 100px;
+        filter: drop-shadow(-5px 0 5px rgba(59, 59, 59, 0.25))
+            drop-shadow(5px 0 5px rgba(59, 59, 59, 0.25));
+        background: #ffffff;
+        border-radius: 24px;
+        text-align: center;
+        width: 656px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        color: $gray;
+        font-size: 48px;
+        font-weight: 500;
+    }
+
+    &__btn {
+        background: none;
+        color: $yellow;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
+        text-decoration: underline;
+        margin-top: 32px;
+    }
+}
