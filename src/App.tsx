@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import { Route as RouteEnum } from "./routes/route.enum";
-import { Percussion, WelcomePage, Wind, Stringed, Cart } from "./pages";
+import { Percussion, WelcomePage, Wind, Stringed, Cart, SimilarProduct } from "./pages";
 import { Login, SignUp, ResetPassword, ForgotPassword } from "pages/Account/components";
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
             <Route path={RouteEnum.Percussion} element={<Percussion />} />
             <Route path={RouteEnum.Wind} element={<Wind />} />
             <Route path={RouteEnum.Basket} element={<Cart />} />
+            <Route path={RouteEnum.SimilarProducts} element={<SimilarProduct />} />
         </Routes>
     );
 }
