@@ -10,9 +10,10 @@ export enum Route {
     Basket = "basket",
     SimilarProducts = "similar",
 
-    Percussion = "percussion",
-    Stringed = "stringed",
-    Wind = "wind",
+    Percussion = "/percussion",
+    Stringed = "/stringed",
+    Wind = "/wind",
+    Product = "/product",
 
     // MusicalInstruments = "instruments-catalog",
     // Product = "product",
