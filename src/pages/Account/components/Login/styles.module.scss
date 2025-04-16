@@ -1,0 +1,12 @@
+@use 'styles/mixins' as *;
+
+.login {
+  &__info {
+    @include d-flex(column);
+    gap: 25px;
+
+    & input {
+      width: 100%;
+    }
+  }
+}

@@ -2,11 +2,16 @@ import { Route, Routes } from "react-router-dom";
 
 import { Route as RouteEnum } from "./routes/route.enum";
 import { Percussion, WelcomePage, Wind, Stringed } from "./pages";
+import { Login, SignUp, ResetPassword, ForgotPassword } from "pages/Account/components";
 
 function App() {
     return (
         <Routes>
             <Route path={RouteEnum.General} element={<WelcomePage />} />
+            <Route path={RouteEnum.Login} element={<Login />} />
+			<Route path={RouteEnum.ForgotPassword} element={<ForgotPassword />} />
+			<Route path={RouteEnum.Registration} element={<SignUp />} />
+			<Route path={RouteEnum.ResetPassword} element={<ResetPassword />} />
             <Route path={RouteEnum.Stringed} element={<Stringed />} />
             <Route path={RouteEnum.Percussion} element={<Percussion />} />
             <Route path={RouteEnum.Wind} element={<Wind />} />

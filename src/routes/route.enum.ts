@@ -2,17 +2,17 @@ export enum Route {
     General = "/",
     Others = "*",
 
-    LogIn = "login",
-    Registration = "registration",
+    Login = "login",
+    Registration = "sign-up",
     ForgotPassword = "forgot-password",
     ResetPassword = "reset-password",
 
     Basket = "basket",
     SimilarProducts = "similar",
 
-    Percussion = "/percussion",
-    Stringed = "/stringed",
-    Wind = "/wind",
+    Percussion = "percussion",
+    Stringed = "stringed",
+    Wind = "wind",
 
     // MusicalInstruments = "instruments-catalog",
     // Product = "product",
