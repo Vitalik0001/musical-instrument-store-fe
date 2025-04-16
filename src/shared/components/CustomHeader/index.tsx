@@ -1,6 +1,9 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
+import { Route as RouteEnum } from "../../../routes/route.enum";
+import { getExactPath } from "core/helpers";
+
 import { headerNavigationButtons, headerNavigationIcons } from "core/constants";
 import { CustomButton } from "shared/components";
 
@@ -20,13 +23,15 @@ export const CustomHeader: FC<CustomHeaderProps> = ({
     return (
         <div className={s.header}>
             <div className={s.header__logo}>
-                <img src={Logo} alt="logo"></img>
+                <Link to={RouteEnum.General}>
+                    <img src={Logo} alt="logo"></img>
+                </Link>
             </div>
             <div className={s.header__navigation}>
                 <div className={s["header__navigation--links"]}>
                     {isShowNavigationButtons &&
                         headerNavigationButtons.map((button) => (
-                            <Link key={button.id} to={button.path}>
+                            <Link key={button.id} to={getExactPath(button.path)}>
                                 <CustomButton
                                     classes={s.header__navigation__button}
                                     variant="text"
@@ -39,7 +44,7 @@ export const CustomHeader: FC<CustomHeaderProps> = ({
                 <div className={s["header__navigation--auth"]}>
                     {isShowAuthIcons &&
                         headerNavigationIcons.map((icon) => (
-                            <Link key={icon.id} to={icon.path}>
+                            <Link key={icon.id} to={getExactPath(icon.path)}>
                                 <img
                                     src={icon.src}
                                     alt={icon.alt}

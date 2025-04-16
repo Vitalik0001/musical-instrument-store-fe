@@ -2,11 +2,11 @@ import {
     HeaderNavigationIconId,
     HeaderNavigationButtonId,
     HeaderNavigationButtonLabel,
-    HeaderNavigationButtonPath,
     HeaderNavigationIconAlt,
-    HeaderNavigationIconTitle,
-    HeaderNavigationIconPath,
+    HeaderNavigationIconTitle
 } from "core/enums";
+
+import { Route as RouteEnum } from '../../routes/route.enum';
 
 import basket from "assets/icons/shopping-basket.svg";
 import login from "assets/icons/profile.svg";
@@ -14,17 +14,17 @@ import login from "assets/icons/profile.svg";
 export const headerNavigationButtons = [
     {
         id: HeaderNavigationButtonId.Stringed,
-        path: HeaderNavigationButtonPath.Stringed,
+        path: RouteEnum.Stringed,
         text: HeaderNavigationButtonLabel.Stringed,
     },
     {
         id: HeaderNavigationButtonId.Wind,
-        path: HeaderNavigationButtonPath.Wind,
+        path: RouteEnum.Wind,
         text: HeaderNavigationButtonLabel.Wind,
     },
     {
         id: HeaderNavigationButtonId.Percussion,
-        path: HeaderNavigationButtonPath.Percussion,
+        path: RouteEnum.Percussion,
         text: HeaderNavigationButtonLabel.Percussion,
     },
 ];
@@ -32,14 +32,14 @@ export const headerNavigationButtons = [
 export const headerNavigationIcons = [
     {
         id: HeaderNavigationIconId.Basket,
-        path: HeaderNavigationIconPath.Basket,
+        path: RouteEnum.Basket,
         alt: HeaderNavigationIconAlt.Basket,
         title: HeaderNavigationIconTitle.Basket,
         src: basket,
     },
     {
         id: HeaderNavigationIconId.Login,
-        path: HeaderNavigationIconPath.Login,
+        path: RouteEnum.Login,
         alt: HeaderNavigationIconAlt.Login,
         title: HeaderNavigationIconTitle.Login,
         src: login,

@@ -1,10 +1,8 @@
 import React from "react";
-import { PageContentWrapper } from "shared/layouts";
-import { PageInstrumentWrapper } from "shared/layouts/PageInstrumentsWrapper";
-import { CustomHeader } from "shared/components";
+import { PageContentWrapper, PageInstrumentWrapper } from "shared/layouts";
+import { CustomHeader, CustomInstrument } from "shared/components";
 import { Guitars } from "pages/Stringed/components/Instruments/components/Guitars";
 import { Violines } from "pages/Stringed/components/Instruments/components/Violines";
-import { CustomInstrument } from "shared/components/CustomInstrument";
 
 import mainImage from "assets/images/percussion-main.png";
 
