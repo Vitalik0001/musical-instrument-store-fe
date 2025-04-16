@@ -2,41 +2,41 @@ export const instrumentHeaderNavigation = {
     stringed: [
         {
             id: 1,
-            path: "#",
+            path: "#Гітари",
             text: "Гітари",
         },
         {
             id: 2,
-            path: "#",
+            path: "#Скрипки",
             text: "Скрипки",
         },
         {
             id: 3,
-            path: "#",
+            path: "#Укулеле",
             text: "Укулеле",
         },
     ],
     wind: [
         {
             id: 4,
-            path: "#",
+            path: "#Саксофони",
             text: "Саксофони",
         },
         {
             id: 5,
-            path: "#",
+            path: "#Флейти",
             text: "Флейти",
         },
     ],
     percussion: [
         {
             id: 6,
-            path: "#",
+            path: "#Установки",
             text: "Установки",
         },
         {
             id: 7,
-            path: "#",
+            path: "#Барабани",
             text: "Барабани",
         },
     ],
