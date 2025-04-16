@@ -1,6 +1,7 @@
 import React from "react";
 import { guitarData } from "core/constants/instruments-data";
 import { CustomInstrumentCard } from "shared/components/CustomInstrumentCard";
+import { getExactPath } from "core/helpers";
 
 import s from "./styles.module.scss";
 
@@ -20,6 +21,7 @@ export const Products: React.FC = () => {
                             isHasColor={item.isHasColor}
                             price={item.price}
                             colors={item.colors}
+                            link={getExactPath(item.link)}
                         />
                     ))}
             </div>

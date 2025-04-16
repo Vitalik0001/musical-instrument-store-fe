@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import s from "./styles.module.scss";
-import { Link } from "react-router-dom";
 
 interface Colors {
     color: string;
