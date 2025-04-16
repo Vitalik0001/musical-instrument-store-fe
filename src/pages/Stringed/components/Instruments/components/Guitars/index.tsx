@@ -6,6 +6,8 @@ import { CustomButton } from "shared/components";
 import s from "../../styles.module.scss";
 
 export const Guitars: React.FC = () => {
+    console.log(guitarData);
+
     return (
         <>
             <div className={s.stringed__items}>
@@ -17,6 +19,7 @@ export const Guitars: React.FC = () => {
                         isHasColor={item.isHasColor}
                         price={item.price}
                         colors={item.colors}
+                        link={item.link}
                     />
                 ))}
             </div>

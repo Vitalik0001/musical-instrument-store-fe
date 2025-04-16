@@ -1,6 +1,7 @@
 import React from "react";
 
 import s from "./styles.module.scss";
+import { Link } from "react-router-dom";
 
 interface Colors {
     color: string;
@@ -12,6 +13,7 @@ interface InstrumentProps {
     price: string;
     isHasColor: boolean;
     colors: Colors[];
+    link: string;
 }
 
 export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
@@ -20,9 +22,10 @@ export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
     price,
     isHasColor,
     colors,
+    link,
 }) => {
     return (
-        <div className={s.instrument}>
+        <Link to={link} className={s.instrument}>
             <p className={s.instrument__name}>{instrumentName.toUpperCase()}</p>
             <div className={s.instrument__image}>
                 <img src={image} alt="instrument" />
@@ -30,8 +33,9 @@ export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
             <div className={isHasColor ? s.instrument__block : ""}>
                 <div className={s.instrument__colors}>
                     {isHasColor &&
-                        colors.map((item) => (
+                        colors.map((item, index) => (
                             <p
+                                key={index}
                                 style={{
                                     background: item.color,
                                     width: "24px",
@@ -43,6 +47,6 @@ export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
                 </div>
                 <p className={s.instrument__price}>{price}</p>
             </div>
-        </div>
+        </Link>
     );
 };
