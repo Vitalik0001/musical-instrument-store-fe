@@ -1,8 +1,11 @@
 import React from "react";
-import { CartItem } from "../CartItem";
+import { Link } from "react-router-dom";
+import { Route as RouteEnum } from "../../../../routes/route.enum";
+import { CartItem } from "../index";
+import { CustomButton } from "shared/components";
+import { getExactPath } from "core/helpers";
 
 import s from "./styles.module.scss";
-import { CustomButton } from "shared/components";
 
 export const CartInfo: React.FC = () => {
     return (
@@ -13,7 +16,9 @@ export const CartInfo: React.FC = () => {
                 <CartItem />
                 <CartItem />
                 <CustomButton classes={s.cart__btn}>
-                    Переглянути схожі товари
+                    <Link to={getExactPath(RouteEnum.SimilarProducts)}>
+                        Переглянути схожі товари
+                    </Link>
                 </CustomButton>
             </div>
         </div>
