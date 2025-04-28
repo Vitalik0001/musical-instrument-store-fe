@@ -11,7 +11,7 @@ import { LoginForm, LoginLinks } from "./components";
 import s from "./styles.module.scss";
 
 export const Login = () => {
-    const [email, setEmail] = useState<string>("");
+    const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -22,9 +22,9 @@ export const Login = () => {
 
     const handleLogin = async () => {
         try {
-            await dispatch(login({ email, password })).unwrap();
+            await dispatch(login({ username, password })).unwrap();
             await dispatch(getUser()).unwrap();
-            setEmail("");
+            setUsername("");
             setPassword("");
 
             const token = localStorage.getItem("visitedPaths");
@@ -55,7 +55,7 @@ export const Login = () => {
                 onChange={handleLogin}
             >
                 <div className={s.login__info}>
-                    <LoginForm setPassword={setPassword} setEmail={setEmail} />
+                    <LoginForm setPassword={setPassword} setEmail={setUsername} />
                     <LoginLinks />
                 </div>
             </AuthorizationWrapper>

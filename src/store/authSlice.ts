@@ -3,12 +3,12 @@ import axios, { AxiosError } from "axios";
 
 interface SignUpData {
     email: string;
+    username: string;
     password: string;
-    name: string;
 }
 
 interface LoginData {
-    email: string;
+    username: string;
     password: string;
 }
 
@@ -16,12 +16,12 @@ const URL = import.meta.env.VITE_URL;
 
 export const signUp = createAsyncThunk<void, SignUpData>(
     "auth/signUp",
-    async ({ email, password, name }, { rejectWithValue }) => {
+    async ({ email, password, username }, { rejectWithValue }) => {
         try {
             await axios.post(`${URL}3000/api/auth/sign-up`, {
                 email,
+                username,
                 password,
-                name,
             });
         } catch (error) {
             const err = error as AxiosError;
@@ -37,10 +37,10 @@ export const signUp = createAsyncThunk<void, SignUpData>(
 
 export const login = createAsyncThunk<void, LoginData>(
     "auth/login",
-    async ({ email, password }, { rejectWithValue }) => {
+    async ({ username, password }, { rejectWithValue }) => {
         try {
             const response = await axios.post(`${URL}3000/api/auth/login`, {
-                email,
+                username,
                 password,
             });
 

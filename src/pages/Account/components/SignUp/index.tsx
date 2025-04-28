@@ -21,7 +21,7 @@ export const SignUp = () => {
     const handleSubmit = async () => {
         try {
             await dispatch(
-                signUp({ email, password, name: username })
+                signUp({ email, password, username })
             ).unwrap();
 
             navigate("/login");
