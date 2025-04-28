@@ -16,6 +16,7 @@ import {
     ResetPassword,
     ForgotPassword,
 } from "pages/Account/components";
+import ProtectedRoute from "./routes/ProtectedRotes";
 
 function App() {
     return (
@@ -31,7 +32,9 @@ function App() {
             <Route path={RouteEnum.Stringed} element={<Stringed />} />
             <Route path={RouteEnum.Percussion} element={<Percussion />} />
             <Route path={RouteEnum.Wind} element={<Wind />} />
-            <Route path={RouteEnum.Basket} element={<Cart />} />
+            <Route element={<ProtectedRoute redirectPath={RouteEnum.Login} />}>
+                <Route path={RouteEnum.Basket} element={<Cart />} />
+            </Route>
             <Route
                 path={RouteEnum.SimilarProducts}
                 element={<SimilarProduct />}
