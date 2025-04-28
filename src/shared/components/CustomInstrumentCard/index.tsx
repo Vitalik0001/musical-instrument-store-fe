@@ -1,5 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { useAppDispatch } from "hooks/useStore";
+import { addViewedProduct } from "store/productsSlice";
 
 import s from "./styles.module.scss";
 
@@ -8,24 +10,45 @@ interface Colors {
 }
 
 interface InstrumentProps {
+    id: number;
     instrumentName: string;
     image: string;
     price: string;
     isHasColor: boolean;
     colors: Colors[];
-    link: string;
+    type: string;
+    link: (id: number) => void;
 }
 
 export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
+    id,
     instrumentName,
     image,
     price,
     isHasColor,
     colors,
+    type,
     link,
 }) => {
+    const dispatch = useAppDispatch();
+
+    const handleClick = () => {
+        dispatch(
+            addViewedProduct({
+                id,
+                brand: instrumentName,
+                color:
+                    isHasColor && colors.length > 0
+                        ? colors[0].color
+                        : "default",
+                type,
+                price: Number(price),
+            })
+        );
+        link(id);
+    };
     return (
-        <Link to={link} className={s.instrument}>
+        <div className={s.instrument} onClick={handleClick}>
             <p className={s.instrument__name}>{instrumentName.toUpperCase()}</p>
             <div className={s.instrument__image}>
                 <img src={image} alt="instrument" />
@@ -47,6 +70,6 @@ export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
                 </div>
                 <p className={s.instrument__price}>{price}</p>
             </div>
-        </Link>
+        </div>
     );
 };

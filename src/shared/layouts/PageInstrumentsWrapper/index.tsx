@@ -64,7 +64,7 @@ export const PageInstrumentWrapper: React.FC<PageInstrumentProps> = ({
                                     activeBtnId === button.id ? s.active : ""
                                 }`}
                                 variant="text"
-                                handleAnchor={() => handleClick(button.path)}
+                                handleClick={() => handleClick(button.path)}
                             >
                                 {button.text}
                             </CustomButton>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useRedirect } from "hooks/index";
 import { guitarData } from "core/constants/instruments-data";
 import { CustomInstrumentCard } from "shared/components/CustomInstrumentCard";
 import { CustomButton } from "shared/components";
@@ -6,7 +7,7 @@ import { CustomButton } from "shared/components";
 import s from "../../styles.module.scss";
 
 export const Guitars: React.FC = () => {
-    console.log(guitarData);
+    const { handleClick } = useRedirect();
 
     return (
         <>
@@ -14,12 +15,14 @@ export const Guitars: React.FC = () => {
                 {guitarData.map((item) => (
                     <CustomInstrumentCard
                         key={item.id}
+                        id={item.id}
                         instrumentName={item.title}
                         image={item.image}
                         isHasColor={item.isHasColor}
                         price={item.price}
                         colors={item.colors}
-                        link={item.link}
+                        link={handleClick}
+                        type="guitar"
                     />
                 ))}
             </div>
