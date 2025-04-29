@@ -14,6 +14,7 @@ export enum Route {
     Stringed = "stringed",
     Wind = "wind",
     Product = "product",
+    ProductItem = "/stringed/:id",
 
     // MusicalInstruments = "instruments-catalog",
     // Product = "product",

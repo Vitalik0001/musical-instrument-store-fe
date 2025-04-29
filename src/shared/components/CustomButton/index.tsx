@@ -9,7 +9,7 @@ interface CustomButtonProps {
     variant?: string;
     isLoading?: boolean;
     disabled?: boolean;
-    handleAnchor?: () => void;
+    handleClick?: () => void;
     id?: string;
 }
 
@@ -18,7 +18,7 @@ export const CustomButton: FC<PropsWithChildren<CustomButtonProps>> = ({
     variant = "contained",
     isLoading = false,
     disabled = false,
-    handleAnchor,
+    handleClick,
     children,
     ...props
 }) => {
@@ -32,7 +32,7 @@ export const CustomButton: FC<PropsWithChildren<CustomButtonProps>> = ({
             })}
             disabled={isLoading || disabled}
             {...props}
-            onClick={handleAnchor}
+            onClick={handleClick}
         >
             {children}
 

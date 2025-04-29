@@ -39,7 +39,7 @@ function App() {
                 path={RouteEnum.SimilarProducts}
                 element={<SimilarProduct />}
             />
-            <Route path={RouteEnum.Product} element={<Product />} />
+            <Route path={RouteEnum.ProductItem} element={<Product />} />
         </Routes>
     );
 }

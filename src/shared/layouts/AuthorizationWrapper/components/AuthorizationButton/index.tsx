@@ -20,7 +20,7 @@ export const AuthorizationButton: FC<AuthorizationButtonProps> = ({
             <CustomButton
                 classes={s.auth__next__button}
                 variant="contained"
-                handleAnchor={onChange}
+                handleClick={onChange}
             >
                 {path ? <Link to={path}>{text}</Link> : text}
             </CustomButton>

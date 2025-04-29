@@ -1,6 +1,8 @@
 import React from "react";
 import { CustomButton, CustomHeader } from "shared/components";
 import { PageContentWrapper } from "shared/layouts";
+import { useAppDispatch } from "hooks/useStore";
+import { addSelectedProduct } from "store/productsSlice";
 
 import rightArrow from "assets/images/arrow-right-solid 2.svg";
 import leftArrow from "assets/images/arrow-right-solid 1.svg";
@@ -9,6 +11,21 @@ import yamahaQ from "assets/images/guitar-main.svg";
 import s from "./styles.module.scss";
 
 export const Product: React.FC = () => {
+    const dispatch = useAppDispatch();
+
+    const handleAddToCart = () => {
+        dispatch(
+            addSelectedProduct({
+                id: 1,
+                brand: "Sire",
+                color: "Natural",
+                type: "Guitar",
+                price: 759,
+            })
+        );
+        console.log("Товар додано у корзину!");
+    };
+
     return (
         <>
             <CustomHeader />
@@ -66,7 +83,10 @@ export const Product: React.FC = () => {
                                 SIR MARCUS MILLER M6 6-STRING HEADLESS
                             </p>
                             <p className={s.product__price}>759$</p>
-                            <CustomButton classes={s.product__bucket}>
+                            <CustomButton
+                                classes={s.product__bucket}
+                                handleClick={handleAddToCart}
+                            >
                                 В КОРЗИНУ
                             </CustomButton>
                         </div>
