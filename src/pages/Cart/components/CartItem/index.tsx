@@ -1,19 +1,33 @@
 import React from "react";
 import { CustomButton } from "shared/components";
+import { removeSelectedProduct } from "store/productsSlice";
+import { useAppDispatch } from "hooks/useStore";
 
 import s from "./styles.module.scss";
 
-export const CartItem: React.FC = () => {
+interface Product {
+    id: number;
+    brand: string;
+    price: string;
+}
+
+export const CartItem: React.FC<Product> = ({ id, brand, price }) => {
+    const dispatch = useAppDispatch();
+    const handleRemoveItem = (): void => {
+        dispatch(removeSelectedProduct(id));
+    };
+
     return (
         <div className={s.cart}>
             <div className={s.cart__block}>
-                <p className={s.cart__block__name}>
-                    Sire Marcus Miller M6 6-String Headless
-                </p>
-                <p className={s.cart__block__price}>759$</p>
+                <p className={s.cart__block__name}>{brand}</p>
+                <p className={s.cart__block__price}>{price}</p>
             </div>
             <div className={s.cart__button}>
-                <CustomButton classes={s.cart__btn}>
+                <CustomButton
+                    classes={s.cart__btn}
+                    handleClick={handleRemoveItem}
+                >
                     ВИЛУЧИТИ З КОРЗИНИ
                 </CustomButton>
             </div>

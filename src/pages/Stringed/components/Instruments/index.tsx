@@ -1,20 +1,23 @@
 import React from "react";
-import { Guitars } from "./components/Guitars";
-import { Violines } from "./components/Violines";
-import { Ukulele } from "./components/Ukulele";
 import { CustomInstrument } from "shared/components/CustomInstrument";
+import { CustomCard } from "shared/components/CustomCard";
+import {
+    guitarData,
+    ukuleleData,
+    violinsData,
+} from "core/constants/instruments-data";
 
 export const Instruments: React.FC = () => {
     return (
         <div>
             <CustomInstrument title="Гітари" id="Гітари">
-                <Guitars />
+                <CustomCard data={guitarData} />
             </CustomInstrument>
             <CustomInstrument title="Скрипки" id="Скрипки">
-                <Violines />
+                <CustomCard data={violinsData} />
             </CustomInstrument>
             <CustomInstrument title="Укулеле" id="Укулеле">
-                <Ukulele />
+                <CustomCard data={ukuleleData} />
             </CustomInstrument>
         </div>
     );

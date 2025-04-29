@@ -42,11 +42,13 @@ export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
                         ? colors[0].color
                         : "default",
                 type,
-                price: Number(price),
+                price: price,
             })
         );
         link(id);
     };
+    console.log(price);
+
     return (
         <div className={s.instrument} onClick={handleClick}>
             <p className={s.instrument__name}>{instrumentName.toUpperCase()}</p>

@@ -1,7 +1,7 @@
 import React from "react";
 import { CustomButton, CustomHeader } from "shared/components";
 import { PageContentWrapper } from "shared/layouts";
-import { useAppDispatch } from "hooks/useStore";
+import { useAppDispatch, useAppSelector } from "hooks/useStore";
 import { addSelectedProduct } from "store/productsSlice";
 
 import rightArrow from "assets/images/arrow-right-solid 2.svg";
@@ -9,18 +9,28 @@ import leftArrow from "assets/images/arrow-right-solid 1.svg";
 import yamahaQ from "assets/images/guitar-main.svg";
 
 import s from "./styles.module.scss";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const Product: React.FC = () => {
+    const navigate = useNavigate();
+    const { id } = useParams();
     const dispatch = useAppDispatch();
+    const product = useAppSelector((state) => state.product.viewedProducts);
+    const productItem = product.find((item) => item.id === Number(id));
+
+    if (!productItem) {
+        navigate("/");
+        return null;
+    }
 
     const handleAddToCart = () => {
         dispatch(
             addSelectedProduct({
-                id: 1,
-                brand: "Sire",
-                color: "Natural",
-                type: "Guitar",
-                price: 759,
+                id: productItem.id,
+                brand: productItem.brand,
+                color: productItem.color,
+                type: productItem.type,
+                price: productItem.price,
             })
         );
         console.log("Товар додано у корзину!");
@@ -80,9 +90,11 @@ export const Product: React.FC = () => {
                         </div>
                         <div className={s.product__block}>
                             <p className={s.product__name}>
-                                SIR MARCUS MILLER M6 6-STRING HEADLESS
+                                {productItem?.brand}
                             </p>
-                            <p className={s.product__price}>759$</p>
+                            <p className={s.product__price}>
+                                {productItem.price}
+                            </p>
                             <CustomButton
                                 classes={s.product__bucket}
                                 handleClick={handleAddToCart}
