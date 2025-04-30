@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface Product {
+export interface Product {
     id: number;
     brand: string;
     color: string;
     type: string;
-    price: number;
+    price: string;
 }
 
 interface ProductsState {
