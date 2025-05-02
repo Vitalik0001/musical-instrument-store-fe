@@ -1,38 +1,28 @@
 import React from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 import { CustomButton, CustomHeader } from "shared/components";
 import { PageContentWrapper } from "shared/layouts";
-import { useAppDispatch, useAppSelector } from "hooks/useStore";
+import { useAppDispatch } from "hooks/useStore";
 import { addSelectedProduct } from "store/productsSlice";
 
-import rightArrow from "assets/images/arrow-right-solid 2.svg";
-import leftArrow from "assets/images/arrow-right-solid 1.svg";
 import yamahaQ from "assets/images/guitar-main.svg";
 
 import s from "./styles.module.scss";
-import { useNavigate, useParams } from "react-router-dom";
 
 export const Product: React.FC = () => {
-    const navigate = useNavigate();
-    const { id } = useParams();
     const dispatch = useAppDispatch();
-    const product = useAppSelector((state) => state.product.viewedProducts);
-    const productItem = product.find((item) => item.id === Number(id));
-
-    if (!productItem) {
-        navigate("/");
-        return null;
-    }
 
     const handleAddToCart = () => {
         dispatch(
             addSelectedProduct({
-                id: productItem.id,
-                brand: productItem.brand,
-                color: productItem.color,
-                type: productItem.type,
-                price: productItem.price,
+                id: 1,
+                brand: "Sire",
+                color: "Natural",
+                type: "Guitar",
+                price: "759",
             })
-        );
+        ); 
         console.log("Товар додано у корзину!");
     };
 
@@ -42,21 +32,22 @@ export const Product: React.FC = () => {
             <PageContentWrapper>
                 <div className={s.product}>
                     <div className={s.product__slider}>
-                        <img
-                            src={rightArrow}
-                            alt="s"
-                            className={s.product__arrow}
-                        />
-                        <img
-                            src={yamahaQ}
-                            alt="guitar"
-                            className={s.product__img}
-                        />
-                        <img
-                            src={leftArrow}
-                            alt="s"
-                            className={s.product__arrow}
-                        />
+                        <Swiper
+                            modules={[Navigation]}
+                            navigation
+                            slidesPerView={1}
+                            className={s.product__swiper}
+                        >
+                            <SwiperSlide>
+                                <img src={yamahaQ} alt="guitar 1" className={s.product__img} />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={yamahaQ} alt="guitar 2" className={s.product__img} />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={yamahaQ} alt="guitar 3" className={s.product__img} />
+                            </SwiperSlide>
+                        </Swiper>
                     </div>
                     <div className={s.product__info}>
                         <div>
@@ -90,11 +81,9 @@ export const Product: React.FC = () => {
                         </div>
                         <div className={s.product__block}>
                             <p className={s.product__name}>
-                                {productItem?.brand}
+                                SIR MARCUS MILLER M6 6-STRING HEADLESS
                             </p>
-                            <p className={s.product__price}>
-                                {productItem.price}
-                            </p>
+                            <p className={s.product__price}>759$</p>
                             <CustomButton
                                 classes={s.product__bucket}
                                 handleClick={handleAddToCart}

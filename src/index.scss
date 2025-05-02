@@ -1,5 +1,8 @@
 @use 'styles/resets' as *;
 
+@use 'swiper/css' as *;
+@use 'swiper/css/navigation' as *;
+
 // Montserrat
 @font-face {
 	font-family: 'Montserrat';
