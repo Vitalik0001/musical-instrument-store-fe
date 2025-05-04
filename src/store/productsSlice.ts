@@ -7,6 +7,7 @@ export interface Product {
     type: string;
     price: string;
     productPage?: {
+        description: string,
         youtubeLink: string,
         audio: string,
         generalImages: string[]

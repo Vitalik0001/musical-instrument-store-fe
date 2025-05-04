@@ -69,11 +69,8 @@ export const CustomHeader: FC<CustomHeaderProps> = ({
                                 username
                             ) {
                                 return (
-                                    <div className={s.header__profile}>
-                                        <span
-                                            key={icon.id}
-                                            className={s.header__username}
-                                        >
+                                    <div key={icon.id} className={s.header__profile}>
+                                        <span className={s.header__username}>
                                             {username}
                                         </span>
                                         <button

@@ -16,6 +16,7 @@ interface Data {
     price: string;
     colors: Color[];
     productPage?: {
+        description: string;
         youtubeLink: string;
         audio: string;
         generalImages: string[];

@@ -18,6 +18,7 @@ interface InstrumentProps {
     type: string;
     link: (id: number) => void;
     productPage?: {
+        description: string;
         youtubeLink: string;
         audio: string;
         generalImages: string[];

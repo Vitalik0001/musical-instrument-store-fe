@@ -94,12 +94,10 @@ export const Product: React.FC = () => {
                             src={productItem.productPage?.audio}
                         />
                         <p className={s.product__text}>
-                            Нова Q3 - це перший варіант у новій серії Q від
-                            Sire. Ця серія пропонує свіжу інтерпретацію дизайну
-                            корпусу з подвійним вирізом з унікальної точки зору
-                            Sire. Виняткова легкість і безперечна зручність гри
-                            - ось дві ключові особливості цієї нової моделі
-                            гітари.
+                            {(() => {
+                                console.log(productItem.productPage?.description);
+                                return productItem.productPage?.description
+                            })()}
                         </p>
                         {(() => {
                             const rawLink = productItem.productPage?.youtubeLink?.trim();
