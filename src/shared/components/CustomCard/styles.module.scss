@@ -6,19 +6,11 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 60px;
+        margin-bottom: 100px;
     }
 
     &__button {
         text-align: right;
         margin: 46px 0;
-    }
-
-    &__btn {
-        background: $yellow;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 34px;
-        padding: 8px 32px;
-        cursor: pointer;
     }
 }

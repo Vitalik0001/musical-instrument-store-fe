@@ -8,6 +8,11 @@
     box-shadow: 2px 2px 12px 0 rgba(0, 0, 0, 0.1);
     width: 330px;
     cursor: pointer;
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+        scale: (1.03);
+    }
 
     &__name {
         color: $black;

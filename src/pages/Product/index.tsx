@@ -1,28 +1,47 @@
 import React from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import { CustomButton, CustomHeader } from "shared/components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Route as RouteEnum } from "routes/route.enum";
+import { Link, useParams } from "react-router-dom";
+import { Navigation } from "swiper/modules";
+import { CustomButton, CustomHeader, CustomAudioPlayer } from "shared/components";
 import { PageContentWrapper } from "shared/layouts";
-import { useAppDispatch } from "hooks/useStore";
+import { useAppDispatch, useAppSelector } from "hooks/useStore";
 import { addSelectedProduct } from "store/productsSlice";
+import { getExactPath } from "core/helpers";
+
+import Sound from "assets/sounds/guitar-sound.mp3"
 
 import yamahaQ from "assets/images/guitar-main.svg";
 
 import s from "./styles.module.scss";
 
 export const Product: React.FC = () => {
+    const { id } = useParams();
     const dispatch = useAppDispatch();
+    const product = useAppSelector((state) => state.product.viewedProducts);
+    const productItem = product.find((item) => item.id === Number(id));
+
+    if (!productItem) {
+        return (
+            <p className={s.product__general}>
+                Вибраний товар не знайдений. Бажаєте повернутись на
+                <CustomButton classes={s.product__general__btn}>
+                    <Link to={RouteEnum.General}>головну сторінку?</Link>
+                </CustomButton>
+            </p>
+        );
+    }
 
     const handleAddToCart = () => {
         dispatch(
             addSelectedProduct({
-                id: 1,
-                brand: "Sire",
-                color: "Natural",
-                type: "Guitar",
-                price: "759",
+                id: productItem.id,
+                title: productItem.title,
+                color: productItem.color,
+                type: productItem.type,
+                price: productItem.price,
             })
-        ); 
+        );
         console.log("Товар додано у корзину!");
     };
 
@@ -39,13 +58,25 @@ export const Product: React.FC = () => {
                             className={s.product__swiper}
                         >
                             <SwiperSlide>
-                                <img src={yamahaQ} alt="guitar 1" className={s.product__img} />
+                                <img
+                                    src={yamahaQ}
+                                    alt="guitar 1"
+                                    className={s.product__img}
+                                />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img src={yamahaQ} alt="guitar 2" className={s.product__img} />
+                                <img
+                                    src={yamahaQ}
+                                    alt="guitar 2"
+                                    className={s.product__img}
+                                />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <img src={yamahaQ} alt="guitar 3" className={s.product__img} />
+                                <img
+                                    src={yamahaQ}
+                                    alt="guitar 3"
+                                    className={s.product__img}
+                                />
                             </SwiperSlide>
                         </Swiper>
                     </div>
@@ -94,6 +125,7 @@ export const Product: React.FC = () => {
                     </div>
                     <div>
                         <p className={s.product__listen}>ПОСЛУХАЙ ЦЕ</p>
+                        <CustomAudioPlayer src={Sound}></CustomAudioPlayer>
                         <p className={s.product__text}>
                             Нова Q3 - це перший варіант у новій серії Q від
                             Sire. Ця серія пропонує свіжу інтерпретацію дизайну
@@ -113,9 +145,11 @@ export const Product: React.FC = () => {
                             allowFullScreen
                         ></iframe>
                         <div className={s.product__btn}>
-                            <CustomButton classes={s.product__similar}>
-                                СХОЖІ ТОВАРИ
-                            </CustomButton>
+                            <Link to={getExactPath(RouteEnum.SimilarProducts)}>
+                                <CustomButton classes={s.product__similar}>
+                                    СХОЖІ ТОВАРИ
+                                </CustomButton>
+                            </Link>
                         </div>
                     </div>
                 </div>

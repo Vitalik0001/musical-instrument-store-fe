@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Route as RouteEnum } from "routes/route.enum";
 import { InstrumentData } from "core/types/Instrument";
 import { CustomButton } from "shared/components";
+import { getExactPath } from "core/helpers";
 
-// Styles
 import s from "./styles.module.scss";
 
 export const ProductInfo: React.FC<InstrumentData> = ({
@@ -23,13 +25,15 @@ export const ProductInfo: React.FC<InstrumentData> = ({
             <div>
                 <p className={s.music__title}>{title}</p>
                 <p className={s.music__text}>{text}</p>
-                <CustomButton
-                    classes={`${s.music__btn} ${
-                        id === 3 ? s.music__btn__last : ""
-                    }`}
-                >
-                    Більше
-                </CustomButton>
+                <Link to={getExactPath(RouteEnum.Stringed)}>
+                    <CustomButton
+                        classes={`${s.music__btn} ${
+                            id === 3 ? s.music__btn__last : ""
+                        }`}
+                    >
+                        Більше
+                    </CustomButton>
+                </Link>
             </div>
             {isRightSide && (
                 <div>

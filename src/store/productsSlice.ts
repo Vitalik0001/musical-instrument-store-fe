@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Product {
     id: number;
-    brand: string;
+    title: string;
     color: string;
     type: string;
     price: string;
@@ -24,9 +24,7 @@ const productsSlice = createSlice({
     reducers: {
         addViewedProduct(state, action: PayloadAction<Product>) {
             const product = action.payload;
-            if (!state.viewedProducts.find((p) => p.id === product.id)) {
-                state.viewedProducts.push(product);
-            }
+            state.viewedProducts.push(product);
         },
         addSelectedProduct(state, action: PayloadAction<Product>) {
             const product = action.payload;

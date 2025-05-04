@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import { useAppDispatch } from "hooks/useStore";
 import { addViewedProduct } from "store/productsSlice";
 
@@ -36,7 +35,7 @@ export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
         dispatch(
             addViewedProduct({
                 id,
-                brand: instrumentName,
+                title: instrumentName,
                 color:
                     isHasColor && colors.length > 0
                         ? colors[0].color
@@ -47,7 +46,6 @@ export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
         );
         link(id);
     };
-    console.log(price);
 
     return (
         <div className={s.instrument} onClick={handleClick}>

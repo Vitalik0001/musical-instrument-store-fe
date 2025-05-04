@@ -7,11 +7,11 @@ import s from "./styles.module.scss";
 
 interface Product {
     id: number;
-    brand: string;
+    title: string;
     price: string;
 }
 
-export const CartItem: React.FC<Product> = ({ id, brand, price }) => {
+export const CartItem: React.FC<Product> = ({ id, title, price }) => {
     const dispatch = useAppDispatch();
     const handleRemoveItem = (): void => {
         dispatch(removeSelectedProduct(id));
@@ -20,7 +20,7 @@ export const CartItem: React.FC<Product> = ({ id, brand, price }) => {
     return (
         <div className={s.cart}>
             <div className={s.cart__block}>
-                <p className={s.cart__block__name}>{brand}</p>
+                <p className={s.cart__block__name}>{title}</p>
                 <p className={s.cart__block__price}>{price}</p>
             </div>
             <div className={s.cart__button}>

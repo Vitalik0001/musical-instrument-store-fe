@@ -4,3 +4,4 @@ export * from './CustomInput';
 export * from './CustomInstrument';
 export * from './CustomInstrumentCard';
 // export * from './CustomBackdrop';
+export * from './CustomAudioPlayer';

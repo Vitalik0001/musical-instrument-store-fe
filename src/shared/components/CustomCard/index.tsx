@@ -1,7 +1,6 @@
 import React from "react";
 import { useRedirect } from "hooks/index";
 import { CustomInstrumentCard } from "shared/components/CustomInstrumentCard";
-import { CustomButton } from "shared/components";
 
 import s from "./styles.module.scss";
 
@@ -41,11 +40,6 @@ export const CustomCard: React.FC<DataProps> = ({ data }) => {
                         type="guitar"
                     />
                 ))}
-            </div>
-            <div className={s.stringed__button}>
-                <CustomButton classes={s.stringed__btn}>
-                    ПОКАЗАТИ ЗА ЦІНОЮ
-                </CustomButton>
             </div>
         </>
     );

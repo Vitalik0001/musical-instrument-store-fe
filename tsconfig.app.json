@@ -24,7 +24,8 @@
             "pages/*": ["pages/*"],
             "config/*": ["config/*"],
             "store/*": ["store/*"],
-            "shared/*": ["shared/*"]
+            "shared/*": ["shared/*"],
+            "routes/*": ["routes/*"]
         },
 
         /* Linting */

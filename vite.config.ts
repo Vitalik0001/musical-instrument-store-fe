@@ -16,6 +16,7 @@ export default defineConfig({
             config: "/src/config",
             store: "/src/store",
             shared: "/src/shared",
+            routes: "/src/routes",
         },
     },
 });

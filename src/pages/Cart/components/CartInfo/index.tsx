@@ -22,7 +22,7 @@ export const CartInfo: React.FC = () => {
                         key={item.id}
                         id={item.id}
                         price={item.price}
-                        brand={item.brand}
+                        title={item.title}
                     />
                 ))}
                 <CustomButton classes={s.cart__btn}>
