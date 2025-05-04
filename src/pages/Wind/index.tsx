@@ -1,7 +1,7 @@
 import React from "react";
 import { PageContentWrapper } from "shared/layouts";
 import { PageInstrumentWrapper } from "shared/layouts/PageInstrumentsWrapper";
-import { CustomHeader } from "shared/components";
+import { CustomHeader, CustomFooter } from "shared/components";
 import { CustomCard } from "shared/components/CustomCard";
 import { CustomInstrument } from "shared/components/CustomInstrument";
 import { flutesData, saxophonesData } from "core/constants/instruments-data";
@@ -27,6 +27,7 @@ export const Wind: React.FC = () => {
                     </CustomInstrument>
                 </PageContentWrapper>
             </PageInstrumentWrapper>
+            <CustomFooter />
         </>
     );
 };

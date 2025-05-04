@@ -43,6 +43,7 @@
     &__block {
         text-align: right;
         margin-top: 94px;
+        width: 100%;
     }
 
     &__colors {
@@ -96,6 +97,19 @@
         margin: 60px 0;
     }
 
+    &__general {
+        text-align: center;
+        &__btn {
+            background: none;
+            color: $yellow;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 28px;
+            text-decoration: underline;
+            margin-top: 32px;
+        }
+    }
+
     &__text {
         margin: 60px 0;
         color: $black;
@@ -115,49 +129,49 @@
 
 :global(.swiper-button-next),
 :global(.swiper-button-prev) {
-  width: 54px !important;
-  height: 54px !important;
-  background-color: $yellow;
-  border-radius: 50%;
-  position: relative;
-  z-index: 10;
-  background: $yellow;
-  padding: 0;
+    width: 54px !important;
+    height: 54px !important;
+    background-color: $yellow;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
+    background: $yellow;
+    padding: 0;
 }
 
 :global(.swiper-button-next::after),
 :global(.swiper-button-prev::after) {
-  display: none;
-  content: none;
+    display: none;
+    content: none;
 }
 
 :global(.swiper-button-next::before),
 :global(.swiper-button-prev::before) {
-  content: '';
-  display: block;
-  width: 25px;
-  height: 25px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 :global(.swiper-button-next::before) {
-  background-image: url('../../assets/images/arrow-right-solid%201.svg');
+    background-image: url("../../assets/images/arrow-right-solid%201.svg");
 }
 
 :global(.swiper-button-prev::before) {
-  background-image: url('../../assets/images/arrow-right-solid%202.svg');
+    background-image: url("../../assets/images/arrow-right-solid%202.svg");
 }
 
 :global(.swiper-button-prev) {
     transform: translateX(-10px);
 }
-  
+
 :global(.swiper-button-next) {
     transform: translateX(10px);
 }

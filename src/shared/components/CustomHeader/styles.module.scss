@@ -1,46 +1,79 @@
-@use 'styles/variables' as *;
-@use 'styles/palette' as *;
-@use 'styles/mixins' as *;
+@use "styles/variables" as *;
+@use "styles/palette" as *;
+@use "styles/mixins" as *;
 
 .header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: $header-height;
-  @include d-flex(null, space-between, center);
-  background: $gray;
-  padding: 0 165px;
-  z-index: 3;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $header-height;
+    @include d-flex(null, space-between, center);
+    background: $gray;
+    padding: 0 165px;
+    z-index: 3;
 
-  &__navigation {
-    @include d-flex();
-    gap: 50px;
-    
-    &--auth {
-      @include d-flex(null, null, center);
-      gap: 50px;
-      cursor: pointer;
+    &__navigation {
+        @include d-flex();
+        gap: 50px;
 
-      & img {
-        transition: 0.3s all ease-in-out;
-        
-        &:hover {
-          transform: scale(1.12);
+        &--auth {
+            @include d-flex(null, null, center);
+            gap: 50px;
+            cursor: pointer;
+
+            & img {
+                transition: 0.3s all ease-in-out;
+
+                &:hover {
+                    transform: scale(1.12);
+                }
+            }
         }
-      }
+
+        &--links {
+            @include d-flex();
+            gap: 50px;
+        }
+
+        &__button {
+            font-size: 28px !important;
+            transition: 0.3s all ease-in-out;
+            &:hover {
+                color: $yellow;
+            }
+        }
     }
 
-    &--links {
-      @include d-flex();
-      gap: 50px;
+    &__logout {
+        width: 28px;
+        height: 28px;
     }
 
-    &__button {
-      font-size: 28px !important;
-      transition: 0.3s all ease-in-out;
-      &:hover {
-        color: $yellow;
-      }
+    &__btn {
+        background: none;
+        cursor: pointer;
     }
-  }
+
+    &__username {
+        color: $white;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &__profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__count {
+        position: absolute;
+        background-color: rgb(168, 162, 162);
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 50%;
+        padding: 2px 6px;
+        line-height: 1;
+    }
 }

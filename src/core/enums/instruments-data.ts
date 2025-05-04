@@ -124,9 +124,9 @@ export enum DrumSetPrice {
 }
 
 export enum DrumsId {
-    Tama = 22,
-    Mapex = 23,
-    Corina = 24,
+    Tama = 25,
+    Mapex = 26,
+    Corina = 27,
 }
 
 export enum DrumsTitle {

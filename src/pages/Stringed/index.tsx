@@ -1,7 +1,7 @@
 import React from "react";
 import { PageContentWrapper } from "shared/layouts";
 import { PageInstrumentWrapper } from "shared/layouts/PageInstrumentsWrapper";
-import { CustomHeader } from "shared/components";
+import { CustomHeader, CustomFooter } from "shared/components";
 import { Instruments } from "./components/Instruments";
 
 import mainImage from "assets/images/stringed-main-image.png";
@@ -20,6 +20,7 @@ export const Stringed: React.FC = () => {
                     <Instruments />
                 </PageContentWrapper>
             </PageInstrumentWrapper>
+            <CustomFooter />
         </>
     );
 };

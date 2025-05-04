@@ -18,8 +18,12 @@ import s from "./styles.module.scss";
 export const Products: React.FC = () => {
     const { handleClick } = useRedirect();
 
-    const viewedProducts = useAppSelector(state => state.product.viewedProducts);
-    const cartProducts = useAppSelector(state => state.product.selectedProducts);
+    const viewedProducts = useAppSelector(
+        (state) => state.product.viewedProducts
+    );
+    const cartProducts = useAppSelector(
+        (state) => state.product.selectedProducts
+    );
 
     const getAllInstruments = () => {
         return [
@@ -35,11 +39,10 @@ export const Products: React.FC = () => {
 
     console.log("viewedProducts:", viewedProducts);
     console.log("cartProducts:", cartProducts);
-    
-    const allInstruments = getAllInstruments().map(product => ({
+
+    const allInstruments = getAllInstruments().map((product) => ({
         ...product,
-        price: parseFloat(product.price.replace(/[^\d.]/g, "").replace(/\s/g, "")),
-    }));    
+    }));
 
     const userProfile = generateUserProfile(viewedProducts, cartProducts);
     const similarProducts = findSimilarProducts(allInstruments, userProfile);
@@ -48,8 +51,8 @@ export const Products: React.FC = () => {
         <div className={s.product}>
             <p className={s.product__title}>Схожі товари</p>
             <div className={s.product__cards}>
-                {similarProducts.length > 0 
-                    ? similarProducts
+                {similarProducts.length > 0 ? (
+                    similarProducts
                         .slice(0, 3)
                         .reverse()
                         .map((item) => (
@@ -64,9 +67,10 @@ export const Products: React.FC = () => {
                                 colors={item.colors}
                                 link={handleClick}
                             />
-                        )) 
-                    : <p className={s.product__subtitle}>Схожих товарів немає.</p>
-                }
+                        ))
+                ) : (
+                    <p className={s.product__subtitle}>Схожих товарів немає.</p>
+                )}
             </div>
         </div>
     );

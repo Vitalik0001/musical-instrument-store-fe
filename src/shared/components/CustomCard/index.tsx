@@ -15,6 +15,11 @@ interface Data {
     isHasColor: boolean;
     price: string;
     colors: Color[];
+    productPage?: {
+        youtubeLink: string;
+        audio: string;
+        generalImages: string[];
+    };
 }
 
 interface DataProps {
@@ -37,7 +42,8 @@ export const CustomCard: React.FC<DataProps> = ({ data }) => {
                         price={item.price}
                         colors={item.colors}
                         link={handleClick}
-                        type="guitar"
+                        type=""
+                        productPage={item.productPage}
                     />
                 ))}
             </div>

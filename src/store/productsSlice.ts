@@ -42,10 +42,18 @@ const productsSlice = createSlice({
                 (product) => product.id !== action.payload
             );
         },
+        clearAllData(state) {
+            state.viewedProducts = [];
+            state.selectedProducts = [];
+        },
     },
 });
 
-export const { addViewedProduct, addSelectedProduct, removeSelectedProduct } =
-    productsSlice.actions;
+export const {
+    addViewedProduct,
+    addSelectedProduct,
+    removeSelectedProduct,
+    clearAllData,
+} = productsSlice.actions;
 
 export default productsSlice.reducer;

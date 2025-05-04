@@ -17,6 +17,11 @@ interface InstrumentProps {
     colors: Colors[];
     type: string;
     link: (id: number) => void;
+    productPage?: {
+        youtubeLink: string;
+        audio: string;
+        generalImages: string[];
+    };
 }
 
 export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
@@ -28,8 +33,10 @@ export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
     colors,
     type,
     link,
+    productPage,
 }) => {
     const dispatch = useAppDispatch();
+    console.log(productPage);
 
     const handleClick = () => {
         dispatch(
@@ -41,7 +48,8 @@ export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
                         ? colors[0].color
                         : "default",
                 type,
-                price: price,
+                price,
+                productPage,
             })
         );
         link(id);

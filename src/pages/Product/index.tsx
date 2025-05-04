@@ -3,13 +3,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Route as RouteEnum } from "routes/route.enum";
 import { Link, useParams } from "react-router-dom";
 import { Navigation } from "swiper/modules";
-import { CustomAudioPlayer, CustomButton, CustomHeader } from "shared/components";
+import {
+    CustomButton,
+    CustomHeader,
+    CustomAudioPlayer,
+    CustomFooter,
+} from "shared/components";
 import { PageContentWrapper } from "shared/layouts";
 import { useAppDispatch, useAppSelector } from "hooks/useStore";
 import { addSelectedProduct } from "store/productsSlice";
 import { getExactPath } from "core/helpers";
-
-import yamahaQ from "assets/images/guitar-main.svg";
 
 import s from "./styles.module.scss";
 
@@ -18,6 +21,7 @@ export const Product: React.FC = () => {
     const dispatch = useAppDispatch();
     const product = useAppSelector((state) => state.product.viewedProducts);
     const productItem = product.find((item) => item.id === Number(id));
+    console.log(productItem);
 
     if (!productItem) {
         return (
@@ -38,6 +42,7 @@ export const Product: React.FC = () => {
                 color: productItem.color,
                 type: productItem.type,
                 price: productItem.price,
+                productPage: productItem.productPage,
             })
         );
         console.log("Товар додано у корзину!");
@@ -55,64 +60,27 @@ export const Product: React.FC = () => {
                             slidesPerView={1}
                             className={s.product__swiper}
                         >
-                            <SwiperSlide>
-                                <img
-                                    src={yamahaQ}
-                                    alt="guitar 1"
-                                    className={s.product__img}
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img
-                                    src={yamahaQ}
-                                    alt="guitar 2"
-                                    className={s.product__img}
-                                />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img
-                                    src={yamahaQ}
-                                    alt="guitar 3"
-                                    className={s.product__img}
-                                />
-                            </SwiperSlide>
+                            {productItem.productPage?.generalImages.map(
+                                (images) => (
+                                    <SwiperSlide>
+                                        <img
+                                            src={images}
+                                            alt="card image"
+                                            className={s.product__img}
+                                        />
+                                    </SwiperSlide>
+                                )
+                            )}
                         </Swiper>
                     </div>
                     <div className={s.product__info}>
-                        <div>
-                            <p className={s.product__colors}>КОЛЬОРИ</p>
-                            <div className={s.product__colors__circle}>
-                                <p
-                                    style={{
-                                        background: " #E2DFD4",
-                                        width: "32px",
-                                        height: "32px",
-                                        borderRadius: "50px",
-                                    }}
-                                ></p>
-                                <p
-                                    style={{
-                                        background: "#000000",
-                                        width: "32px",
-                                        height: "32px",
-                                        borderRadius: "50px",
-                                    }}
-                                ></p>
-                                <p
-                                    style={{
-                                        background: "#AE4616",
-                                        width: "32px",
-                                        height: "32px",
-                                        borderRadius: "50px",
-                                    }}
-                                ></p>
-                            </div>
-                        </div>
                         <div className={s.product__block}>
                             <p className={s.product__name}>
-                                SIR MARCUS MILLER M6 6-STRING HEADLESS
+                                {productItem.title}
                             </p>
-                            <p className={s.product__price}>759$</p>
+                            <p className={s.product__price}>
+                                {productItem.price}
+                            </p>
                             <CustomButton
                                 classes={s.product__bucket}
                                 handleClick={handleAddToCart}
@@ -123,7 +91,9 @@ export const Product: React.FC = () => {
                     </div>
                     <div>
                         <p className={s.product__listen}>ПОСЛУХАЙ ЦЕ</p>
-                        <CustomAudioPlayer src="" />
+                        <CustomAudioPlayer
+                            src={productItem.productPage?.audio}
+                        />
                         <p className={s.product__text}>
                             Нова Q3 - це перший варіант у новій серії Q від
                             Sire. Ця серія пропонує свіжу інтерпретацію дизайну
@@ -152,6 +122,7 @@ export const Product: React.FC = () => {
                     </div>
                 </div>
             </PageContentWrapper>
+            <CustomFooter />
         </>
     );
 };

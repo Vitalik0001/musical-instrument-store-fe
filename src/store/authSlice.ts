@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 
 interface SignUpData {
@@ -12,62 +12,65 @@ interface LoginData {
     password: string;
 }
 
+interface AuthError {
+    message: string;
+}
+
+interface AuthState {
+    loading: boolean;
+    error: AuthError | null;
+    isAuth: boolean;
+}
+
 const URL = import.meta.env.VITE_URL;
 
-export const signUp = createAsyncThunk<void, SignUpData>(
-    "auth/signUp",
-    async ({ email, password, username }, { rejectWithValue }) => {
-        try {
-            await axios.post(`${URL}3000/api/auth/sign-up`, {
-                email,
-                username,
-                password,
-            });
-        } catch (error) {
-            const err = error as AxiosError;
+export const signUp = createAsyncThunk<
+    void,
+    SignUpData,
+    { rejectValue: AuthError }
+>("auth/signUp", async ({ email, password, username }, { rejectWithValue }) => {
+    try {
+        await axios.post(`${URL}3000/api/auth/sign-up`, {
+            email,
+            username,
+            password,
+        });
+    } catch (error) {
+        const err = error as AxiosError<{ message?: string }>;
+        const message = err.response?.data?.message || "Помилка при реєстрації";
 
-            console.error("Помилка при реєстрації:", err);
-
-            return rejectWithValue(
-                err.response?.data || "Помилка при реєстрації"
-            );
-        }
+        return rejectWithValue({ message });
     }
-);
+});
 
-export const login = createAsyncThunk<void, LoginData>(
-    "auth/login",
-    async ({ username, password }, { rejectWithValue }) => {
-        try {
-            const response = await axios.post(`${URL}3000/api/auth/login`, {
-                username,
-                password,
-            });
+export const login = createAsyncThunk<
+    string,
+    LoginData,
+    { rejectValue: AuthError }
+>("auth/login", async ({ username, password }, { rejectWithValue }) => {
+    try {
+        const response = await axios.post(`${URL}3000/api/auth/login`, {
+            username,
+            password,
+        });
 
-            const token = response.data.token;
+        const token = response.data.token;
+        localStorage.setItem("token", token);
+        return token;
+    } catch (error) {
+        const err = error as AxiosError<{ message?: string }>;
+        const message = err.response?.data?.message || "Помилка при вході";
 
-            localStorage.setItem("token", token);
-
-            return token;
-        } catch (error) {
-            const err = error as AxiosError;
-
-            console.error("Помилка при вході:", error);
-
-            return rejectWithValue(err.response?.data || "Помилка при вході");
-        }
+        return rejectWithValue({ message });
     }
-);
+});
 
-export const getUser = createAsyncThunk<void, void>(
+export const getUser = createAsyncThunk<void, void, { rejectValue: AuthError }>(
     "auth/getUser",
     async (_, { rejectWithValue }) => {
         try {
             const token = localStorage.getItem("token");
-
-            if (!token) {
-                throw new Error("Немає токену");
-            }
+            if (!token) throw new Error("Немає токену");
 
             const response = await axios.get(`${URL}3000/api/users/profile`, {
                 headers: {
@@ -77,29 +80,29 @@ export const getUser = createAsyncThunk<void, void>(
 
             console.log(response.data);
         } catch (error) {
-            const err = error as AxiosError;
+            const err = error as AxiosError<{ message?: string }>;
+            const message =
+                err.response?.data?.message || "Помилка при отриманні профілю";
 
-            console.error("Помилка при отриманні профілю:", error);
-
-            return rejectWithValue(
-                err.response?.data || "Помилка при отриманні профілю:"
-            );
+            return rejectWithValue({ message });
         }
     }
 );
 
+const initialState: AuthState = {
+    loading: false,
+    error: null,
+    isAuth: false,
+};
+
 const authSlice = createSlice({
     name: "auth",
-    initialState: {
-        loading: false,
-        error: null as string | null,
-        isAuth: false,
-    },
+    initialState,
     reducers: {
         logout(state) {
             state.isAuth = false;
         },
-        setAuth(state, action) {
+        setAuth(state, action: PayloadAction<boolean>) {
             state.isAuth = action.payload;
         },
     },
@@ -114,7 +117,9 @@ const authSlice = createSlice({
             })
             .addCase(signUp.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload as string;
+                if (action.payload) {
+                    state.error = action.payload;
+                }
             })
             .addCase(login.pending, (state) => {
                 state.loading = true;
@@ -127,7 +132,9 @@ const authSlice = createSlice({
             })
             .addCase(login.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload as string;
+                if (action.payload) {
+                    state.error = action.payload;
+                }
                 state.isAuth = false;
             })
             .addCase(getUser.pending, (state) => {
@@ -140,7 +147,9 @@ const authSlice = createSlice({
             })
             .addCase(getUser.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload as string;
+                if (action.payload) {
+                    state.error = action.payload;
+                }
                 state.isAuth = false;
             });
     },
