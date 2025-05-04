@@ -21,7 +21,6 @@ export const Product: React.FC = () => {
     const dispatch = useAppDispatch();
     const product = useAppSelector((state) => state.product.viewedProducts);
     const productItem = product.find((item) => item.id === Number(id));
-    console.log(productItem);
 
     if (!productItem) {
         return (
@@ -102,16 +101,25 @@ export const Product: React.FC = () => {
                             - ось дві ключові особливості цієї нової моделі
                             гітари.
                         </p>
-                        <iframe
-                            width="1110"
-                            height="623"
-                            src="https://www.youtube.com/embed/vbydzH7DgWQ?si=ym8nF6rID_xvoFFS"
-                            title="YouTube video player"
-                            style={{ borderRadius: "16px" }}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerPolicy="strict-origin-when-cross-origin"
-                            allowFullScreen
-                        ></iframe>
+                        {(() => {
+                            const rawLink = productItem.productPage?.youtubeLink?.trim();
+                            const youtubeEmbedLink = rawLink?.includes("watch?v=")
+                                ? rawLink.replace("watch?v=", "embed/")
+                                : rawLink;
+
+                            return youtubeEmbedLink ? (
+                                <iframe
+                                    width="1110"
+                                    height="623"
+                                    src={youtubeEmbedLink}
+                                    title="YouTube video player"
+                                    style={{ borderRadius: "16px" }}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                ></iframe>
+                            ) : null;
+                        })()}
                         <div className={s.product__btn}>
                             <Link to={getExactPath(RouteEnum.SimilarProducts)}>
                                 <CustomButton classes={s.product__similar}>

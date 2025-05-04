@@ -36,7 +36,6 @@ export const CustomInstrumentCard: React.FC<InstrumentProps> = ({
     productPage,
 }) => {
     const dispatch = useAppDispatch();
-    console.log(productPage);
 
     const handleClick = () => {
         dispatch(

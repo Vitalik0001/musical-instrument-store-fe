@@ -70,11 +70,6 @@ export const CustomHeader: FC<CustomHeaderProps> = ({
                             ) {
                                 return (
                                     <div className={s.header__profile}>
-                                        <img
-                                            src={icon.src}
-                                            alt={icon.alt}
-                                            title={icon.title}
-                                        />
                                         <span
                                             key={icon.id}
                                             className={s.header__username}

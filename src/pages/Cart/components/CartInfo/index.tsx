@@ -12,7 +12,6 @@ export const CartInfo: React.FC = () => {
     const cartProduct = useAppSelector(
         (state) => state.product.selectedProducts
     );
-    console.log(cartProduct);
 
     return (
         <div className={s.cart}>

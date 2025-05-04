@@ -82,8 +82,6 @@ export function findSimilarProducts(allProducts: any[], userProfile: any) {
                 score += 2;
             }
 
-            console.log("score:", score);
-
             return { ...product, similarityScore: score };
         })
         .filter(product => product.similarityScore > 0)

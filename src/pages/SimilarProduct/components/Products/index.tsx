@@ -37,9 +37,6 @@ export const Products: React.FC = () => {
         ];
     };
 
-    console.log("viewedProducts:", viewedProducts);
-    console.log("cartProducts:", cartProducts);
-
     const allInstruments = getAllInstruments().map((product) => ({
         ...product,
     }));
