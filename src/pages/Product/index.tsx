@@ -3,13 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Route as RouteEnum } from "routes/route.enum";
 import { Link, useParams } from "react-router-dom";
 import { Navigation } from "swiper/modules";
-import { CustomButton, CustomHeader, CustomAudioPlayer } from "shared/components";
+import { CustomAudioPlayer, CustomButton, CustomHeader } from "shared/components";
 import { PageContentWrapper } from "shared/layouts";
 import { useAppDispatch, useAppSelector } from "hooks/useStore";
 import { addSelectedProduct } from "store/productsSlice";
 import { getExactPath } from "core/helpers";
-
-import Sound from "assets/sounds/guitar-sound.mp3"
 
 import yamahaQ from "assets/images/guitar-main.svg";
 
@@ -125,7 +123,7 @@ export const Product: React.FC = () => {
                     </div>
                     <div>
                         <p className={s.product__listen}>ПОСЛУХАЙ ЦЕ</p>
-                        <CustomAudioPlayer src={Sound}></CustomAudioPlayer>
+                        <CustomAudioPlayer src="" />
                         <p className={s.product__text}>
                             Нова Q3 - це перший варіант у новій серії Q від
                             Sire. Ця серія пропонує свіжу інтерпретацію дизайну

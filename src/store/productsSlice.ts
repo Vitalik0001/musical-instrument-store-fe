@@ -6,6 +6,11 @@ export interface Product {
     color: string;
     type: string;
     price: string;
+    productPage?: {
+        youtubeLink: string,
+        audio: string,
+        generalImages: string[]
+    }
 }
 
 interface ProductsState {

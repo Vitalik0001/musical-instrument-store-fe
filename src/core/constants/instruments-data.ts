@@ -50,6 +50,47 @@ import tama from "assets/images/image-Photoroom (12) 2.svg";
 import mapex from "assets/images/image-Photoroom (13) 2.svg";
 import corina from "assets/images/image-Photoroom (14) 2.svg";
 
+import MarcusMillerAudio from 'assets/sounds/sound-1.mp3';
+import FenderAudio from 'assets/sounds/sound-2.mp3';
+import SireMarcusMillerAudio from 'assets/sounds/sound-3.mp3';
+import YamahaAudio from 'assets/sounds/sound-4.mp3';
+import FenderSAudio from 'assets/sounds/sound-5.mp3';
+import YamahaQAudio from 'assets/sounds/sound-6.mp3';
+
+import MarcusMillerImage1 from 'assets/images/sire-marcus-miller-m6-4-string-headless/1.png';
+import MarcusMillerImage2 from 'assets/images/sire-marcus-miller-m6-4-string-headless/2.png';
+import MarcusMillerImage3 from 'assets/images/sire-marcus-miller-m6-4-string-headless/3.png';
+import FenderImage1 from 'assets/images/fender-v6-5-string/1.png';
+import FenderImage2 from 'assets/images/fender-v6-5-string/2.png';
+import FenderImage3 from 'assets/images/fender-v6-5-string/3.png';
+import SireMarcusMillerImage1 from 'assets/images/sire-marcus-miller-m6-6-string-headless/1.png';
+import SireMarcusMillerImage2 from 'assets/images/sire-marcus-miller-m6-6-string-headless/2.png';
+import SireMarcusMillerImage3 from 'assets/images/sire-marcus-miller-m6-6-string-headless/3.png';
+import YamahaImage1 from 'assets/images/yamaha-p6-5-string/1.png';
+import YamahaImage2 from 'assets/images/yamaha-p6-5-string/2.png';
+import YamahaImage3 from 'assets/images/yamaha-p6-5-string/3.png';
+import FenderSImage from 'assets/images/fender-s7-new-gen/1.png';
+import YamahaQImage from 'assets/images/yamaha-q3/1.png';
+
+import GligaGems from 'assets/images/violins/Gliga Gems II Violin.png';
+import AntonioWangVeneziaViolin from 'assets/images/violins/Antonio Wang Venezia Violin.png';
+import CorinaOrquestraViolin from 'assets/images/violins/Corina Orquestra Violin.png';
+import GligaExtraAntiqued from 'assets/images/violins/Gliga Extra Antiqued Violin.png';
+import AntonioWangHeritage from 'assets/images/violins/Antonio Wang Heritage Basic HB Violin.png';
+import StentorStudent from 'assets/images/violins/Stentor Student I Viola.png';
+
+import KalaKA155 from 'assets/images/oculus/Kala KA-15S.png';
+import FigureUKU1 from 'assets/images/oculus/Figure UKU1-OR.png';
+import KalaKAB from 'assets/images/oculus/Kala KA-B.png';
+
+import EastmanEBS253 from 'assets/images/saxophones/Eastman EBS253 Low Bb Baritone Saxophone.png';
+import SelmerParisSupreme from 'assets/images/saxophones/Selmer Paris Supreme Alto Saxophone.png';
+import SelmerParisSA80 from 'assets/images/saxophones/Selmer Paris SA80 Series II Alto Saxophone .png';
+
+import SMLParis from 'assets/images/flutes/SML Paris VSM FL400E.png';
+import Maxtone from 'assets/images/flutes/Maxtone TFC53N1.png';
+import JMichael from 'assets/images/flutes/J.Michael FLU-450S.png';
+
 export const guitarData = [
     {
         id: GuitarsId.MarcusMiller,
@@ -59,6 +100,11 @@ export const guitarData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "https://www.youtube.com/watch?v=vbydzH7DgWQ",
+            audio: MarcusMillerAudio,
+            generalImages: [MarcusMillerImage1, MarcusMillerImage2, MarcusMillerImage3]
+        }
     },
     {
         id: GuitarsId.Fender,
@@ -68,6 +114,11 @@ export const guitarData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "https://www.youtube.com/watch?v=Nhwuw_lgkto",
+            audio: FenderAudio,
+            generalImages: [FenderImage1, FenderImage2, FenderImage3]
+        }
     },
     {
         id: GuitarsId.SireMarcusMiller,
@@ -77,6 +128,11 @@ export const guitarData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "https://www.youtube.com/watch?v=WYofg3gEaqQ",
+            audio: SireMarcusMillerAudio,
+            generalImages: [SireMarcusMillerImage1, SireMarcusMillerImage2, SireMarcusMillerImage3]
+        }
     },
     {
         id: GuitarsId.Yamaha,
@@ -86,6 +142,11 @@ export const guitarData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "https://www.youtube.com/watch?v=JJs6U3GuJDQ",
+            audio: YamahaAudio,
+            generalImages: [YamahaImage1, YamahaImage2, YamahaImage3]
+        }
     },
     {
         id: GuitarsId.FenderS,
@@ -95,6 +156,11 @@ export const guitarData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "https://www.youtube.com/watch?v=sBId956Mzzg",
+            audio: FenderSAudio,
+            generalImages: [FenderSImage]
+        }
     },
     {
         id: GuitarsId.YamahaQ,
@@ -104,6 +170,11 @@ export const guitarData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "https://www.youtube.com/watch?v=fufQNQOPpLE",
+            audio: YamahaQAudio,
+            generalImages: [YamahaQImage]
+        }
     },
 ];
 
@@ -116,6 +187,11 @@ export const violinsData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [GligaGems]
+        }
     },
     {
         id: ViolinId.AntonioWang,
@@ -125,6 +201,11 @@ export const violinsData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [AntonioWangVeneziaViolin]
+        }
     },
     {
         id: ViolinId.CorinaOrquestra,
@@ -134,6 +215,11 @@ export const violinsData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [CorinaOrquestraViolin]
+        }
     },
     {
         id: ViolinId.GligaExtra,
@@ -143,6 +229,11 @@ export const violinsData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [GligaExtraAntiqued]
+        }
     },
     {
         id: ViolinId.AntonioWangFeritage,
@@ -152,6 +243,11 @@ export const violinsData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [AntonioWangHeritage]
+        }
     },
     {
         id: ViolinId.Stentor,
@@ -161,6 +257,11 @@ export const violinsData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [StentorStudent]
+        }
     },
 ];
 
@@ -173,6 +274,11 @@ export const ukuleleData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [KalaKA155]
+        }
     },
     {
         id: UkuleleId.Figure,
@@ -181,7 +287,12 @@ export const ukuleleData = [
         price: UkulelePrice.Figure,
         isHasColor: true,
         link: "product",
-        colors: [{ color: "#1396B1" }, { color: "#DD9738" }],
+        colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [FigureUKU1]
+        }
     },
     {
         id: UkuleleId.KalaB,
@@ -191,6 +302,11 @@ export const ukuleleData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [KalaKAB]
+        }
     },
 ];
 
@@ -203,6 +319,11 @@ export const saxophonesData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [EastmanEBS253]
+        }
     },
     {
         id: SaxophonesId.Supreme,
@@ -212,6 +333,11 @@ export const saxophonesData = [
         isHasColor: true,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [SelmerParisSupreme]
+        }
     },
     {
         id: SaxophonesId.Selmer,
@@ -221,6 +347,11 @@ export const saxophonesData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [SelmerParisSA80]
+        }
     },
 ];
 
@@ -233,6 +364,11 @@ export const flutesData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [SMLParis]
+        }
     },
     {
         id: FlutesId.Maxtone,
@@ -242,6 +378,11 @@ export const flutesData = [
         isHasColor: true,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [Maxtone]
+        }
     },
     {
         id: FlutesId.Michael,
@@ -251,6 +392,11 @@ export const flutesData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [JMichael]
+        }
     },
 ];
 
@@ -263,6 +409,11 @@ export const drumSetData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [debut]
+        }
     },
     {
         id: DrumSetId.Yamaha,
@@ -272,6 +423,11 @@ export const drumSetData = [
         isHasColor: true,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [Yamaha]
+        }
     },
     {
         id: DrumSetId.Nitro,
@@ -281,6 +437,11 @@ export const drumSetData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [nitro]
+        }
     },
 ];
 
@@ -293,6 +454,11 @@ export const drumsData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [tama]
+        }
     },
     {
         id: DrumsId.Mapex,
@@ -302,6 +468,11 @@ export const drumsData = [
         isHasColor: true,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [mapex]
+        }
     },
     {
         id: DrumsId.Corina,
@@ -311,5 +482,10 @@ export const drumsData = [
         isHasColor: false,
         link: "product",
         colors: [],
+        productPage: {
+            youtubeLink: "",
+            audio: "",
+            generalImages: [corina]
+        }
     },
 ];
