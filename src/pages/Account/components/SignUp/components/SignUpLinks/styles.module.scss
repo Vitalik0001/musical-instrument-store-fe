@@ -1,0 +1,12 @@
+@use 'styles/palette' as *;
+
+.sign-up {
+  &__account {
+    font-size: 16px;
+    color: $gray;
+    transition: 0.25s all ease-in-out;
+    &:hover {
+      color: $yellow;
+    }
+  }
+} 

@@ -1,0 +1,7 @@
+@use "styles/variables" as *;
+
+.wrapper {
+    min-height: calc(100vh - $header-height);
+    padding: 8px 165px;
+    margin-top: $header-height;
+}

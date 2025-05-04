@@ -1,0 +1,50 @@
+@use "styles/palette" as *;
+@use "styles/mixins" as *;
+
+.instrument {
+    padding: 24px 25px 24px 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 2px 2px 12px 0 rgba(0, 0, 0, 0.1);
+    width: 330px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+        scale: (1.03);
+    }
+
+    &__name {
+        color: $black;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        height: 48px;
+    }
+
+    &__block {
+        @include d-flex(null, space-between, center);
+    }
+
+    &__colors {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 16px;
+        height: 364px;
+    }
+
+    &__price {
+        color: $black;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: right;
+    }
+}

@@ -1,0 +1,12 @@
+@use "styles/palette" as *;
+
+.stringed {
+    &__title {
+        text-align: center;
+        color: $gray;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 64px;
+        margin-bottom: 60px;
+    }
+}

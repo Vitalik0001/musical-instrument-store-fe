@@ -1,0 +1,45 @@
+@use "styles/mixins" as *;
+@use "styles/palette" as *;
+
+.music {
+    @include d-flex(null, space-between, null);
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 50px;
+
+    &__title {
+        color: #000000;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 48px;
+    }
+
+    &__text {
+        width: 490px;
+        color: #000000;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 32px;
+        margin: 32px 0 52px 0;
+    }
+
+    &__btn {
+        cursor: pointer;
+        background: $yellow;
+        color: #f7faff;
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 500;
+        border-radius: 28px;
+        padding: 12px 48px;
+        transition: 0.3s all ease-in-out;
+
+        &__last {
+            margin-top: 32px;
+        }
+
+        &:hover {
+            scale: (1.1);
+        }
+    }
+}

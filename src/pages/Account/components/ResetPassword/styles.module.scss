@@ -1,0 +1,13 @@
+@use 'styles/palette' as *;
+@use 'styles/mixins' as *;
+
+.password {
+  &__info {
+    @include d-flex(column);
+    gap: 25px;
+
+    & input {
+      width: 100%;
+    }
+  }
+}

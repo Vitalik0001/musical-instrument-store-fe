@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+
+import { Route as RouteEnum } from "./routes/route.enum";
+import {
+    Percussion,
+    WelcomePage,
+    Wind,
+    Stringed,
+    Cart,
+    Product,
+    SimilarProduct,
+} from "./pages";
+import {
+    Login,
+    SignUp,
+    ResetPassword,
+    ForgotPassword,
+} from "pages/Account/components";
+import ProtectedRoute from "./routes/ProtectedRotes";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <Routes>
+            <Route path={RouteEnum.General} element={<WelcomePage />} />
+            <Route path={RouteEnum.Login} element={<Login />} />
+            <Route
+                path={RouteEnum.ForgotPassword}
+                element={<ForgotPassword />}
+            />
+            <Route path={RouteEnum.Registration} element={<SignUp />} />
+            <Route path={RouteEnum.ResetPassword} element={<ResetPassword />} />
+            <Route path={RouteEnum.Stringed} element={<Stringed />} />
+            <Route path={RouteEnum.Percussion} element={<Percussion />} />
+            <Route path={RouteEnum.Wind} element={<Wind />} />
+            <Route element={<ProtectedRoute redirectPath={RouteEnum.Login} />}>
+                <Route path={RouteEnum.Basket} element={<Cart />} />
+            </Route>
+            <Route
+                path={RouteEnum.SimilarProducts}
+                element={<SimilarProduct />}
+            />
+            <Route path={RouteEnum.ProductItem} element={<Product />} />
+        </Routes>
+    );
 }
 
-export default App
+export default App;

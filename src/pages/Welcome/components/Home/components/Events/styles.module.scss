@@ -1,0 +1,45 @@
+.card {
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 4px 4px 14px 0 rgba(0, 0, 0, 0.3);
+    width: 330px;
+    margin: 24px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+    perspective: 1000px;
+
+    &:hover {
+        transform: rotateY(15deg) rotateX(7deg) scale(1.03);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    &__image {
+        width: 298px;
+        height: 190px;
+    }
+
+    &__title {
+        color: #3b3b3b;
+        font-size: 24px;
+        font-weight: 600;
+        margin: 12px 0 8px 0;
+        line-height: 32px;
+    }
+
+    &__text {
+        color: #535353;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 500;
+        margin: 0;
+    }
+}
+
+@keyframes shake3D {
+    0%   { transform: rotateY(0deg); }
+    25%  { transform: rotateY(-8deg); }
+    50%  { transform: rotateY(8deg); }
+    75%  { transform: rotateY(-8deg); }
+    100% { transform: rotateY(0deg); }
+}
